@@ -1,0 +1,2710 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        
+
+<!--
+ 
+duwamish v. 1.0 multi-muse variant by houseofsol using a tutorial by octomoosey & integrating a base code by neonbike themes
+ 
+please do not remove this credit and please do not use this theme for commissions or giveaways. 
+thank you.
+
+please do not edit this to recreate custom themes that have been done in the past (i.e the themes currently seen on cxpt, affcgato, 
+takeseffort, or idumean for example)
+
+https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4 -- use this to change the transparency of the backgrounds
+ 
+-->
+
+<!-- popup script -->
+<script type="text/javascript"
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+//
+$('a.poplight[href^=#]').click(function() {
+var popID = $(this).attr('rel'); //Get Popup Name
+var popURL = $(this).attr('href'); //Get Popup href to define size
+var query= popURL.split('?');
+var dim= query[1].split('&');
+var popWidth = dim[0].split('=')[1]; //Gets the first query string value
+$('#' + popID).fadeIn().css({ 'width': Number( popWidth ) }).prepend('<a href="#" class="close"></a>');
+var popMargTop = ($('#' + popID).height() + 80) / 2;
+var popMargLeft = ($('#' + popID).width() + 80) / 2;
+//Apply Margin to Popup
+$('#' + popID).css({
+'margin-top' : -popMargTop,
+'margin-left' : -popMargLeft
+});
+$('body').append('<div id="fade"></div>');
+$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn(); //Fade in the fade layer - .css({'filter' : 'alpha(opacity=80)'})
+return false;
+});
+$('a.close, #fade').live('click', function() {
+$('#fade , .popup_block').fadeOut(function() {
+$('#fade, a.close').remove(); //fade them both out
+});
+return false;
+});
+});
+</script>
+<!-- end script -->
+
+
+<!-- tabbed script -->
+
+<script>
+
+$(document).ready(function(){
+    $("ul#tabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#tab li.active").removeClass("active");
+            $("ul#tab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+</script>
+
+<!-- end tabbed script -->
+
+
+<!-- tabbed popup script -->
+
+<script>
+
+$(document).ready(function(){
+    $("ul#poptabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#poptabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#poptab li.active").removeClass("active");
+            $("ul#poptab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+</script>
+
+<!-- end tabbed script -->
+
+<!-- tabbed script -->
+
+    <script>
+
+    $(document).ready(function(){
+    $("ul#mvtabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#mvtabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("ul#mvtab li.active").removeClass("active");
+            $("ul#mvtab li:nth-child("+nthChild+")").addClass("active");
+        }
+    });
+});
+
+    </script>
+
+<!-- end tabbed script -->
+
+
+<!-- important scripts -->
+<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+<script src="https://static.tumblr.com/wgijwsy/Ebfm2v4gy/jquery.masonry.min.js"></script>
+
+
+<!-- end other script -->
+
+<!-- mytooltips script -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<script src="https://static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+
+<script>
+
+(function($){
+
+$(document).ready(function(){
+
+$("a[title]").style_my_tooltips({
+
+tip_follows_cursor:true,
+
+tip_delay_time:0,
+
+tip_fade_speed:0,
+
+attribute:"title"
+
+});
+
+});
+
+})(jQuery);
+
+</script>
+
+<!-- end mytooltips script -->
+        
+        <script src="https://kit.fontawesome.com/2e587cc233.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+        
+
+    
+    
+ <!-- colour variables (this is where you change the colours) -->
+ 
+	<meta name="color:background" content="#0F0C14"/>
+	<meta name="color:text" content="#ffffff"/>
+	<meta name="color:links" content="#4078ba"/>
+	<meta name="color:links hover" content="#b27335"/>
+	<meta name="color:permalinks" content="#4580c9"/>
+	<meta name="color:permalinks hover" content="#b27335"/>
+	<meta name="color:tags" content="#3b5d8b"/>
+	<meta name="color:tags hover" content="#936e53"/>
+	<meta name="color:bold" content="#567397"/>
+	<meta name="color:italics" content="#7d8fa0"/>
+	<meta name="color:blockquote" content="#b27335"/>
+	<meta name="color:pagination" content="#3b5d8b"/>
+	<meta name="color:pagination hover" content="#936e53"/>
+	<meta name="color:name" content="#ffffff"/>
+	<meta name="color:sidebox" content="#ffffff"/>
+	<meta name="color:popup background" content="#3b3b3f"/>
+	<meta name="color:popup text" content="#fdfcfa"/>
+	<meta name="color:popup tabs active" content="#715548/>
+	<meta name="color:verse muse tabs" content="#ffffff"/>
+	<meta name="color:verse muse tabs hover" content="0f0f0f"/>
+	<meta name="color:verse muse tabs active" content="#3c2827"/>
+	<meta name="color:buttons" content="#d2d2d2"/>
+	<meta name="color:buttons background" content="#4F4F54"/>
+	
+  
+<!-- image variables (this is for the image uploads) -->  
+
+	<meta name="image:sideimg" content="https://i.imgur.com/a/0MWu14K.png"/>
+
+
+    
+<!-- text variables -- where you will put in the text for certain aspects of your theme -->
+
+<meta name="text:name" content="alteredcanon" /> <!-- this is for your url, character's name or a short title -->
+<meta name="text:sidebox" content="<!-- <h5>heading one</h5> --><br /><center>I've lived a lot <br />of different lives, <br />been different people <br />every time</center><br /><h5>Written by Faith</h5><br />private, & highly selective MULTIMUSE featuring altered canon muses from the marvel cinematic universe, the marvel television cinematic universe, the vampire diaries tv show, and the x-men cinematic universe.<br /><br /><h5>featured muses</h5><br /><center>Natasha Romanoff, Wanda Maximoff, Hayley Marshall & Raven Darkholme</center><br /><h5>currently working on</h5><br /><center>creating alternate universes and plotting threads<br /><br /><br />discord @ faith#4578</center>" />
+
+
+<!-- this is where you can choose what google fonts you want to use -->
+
+<link href='https://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'> 
+
+    
+<style type="text/css">
+
+@font-face {
+	font-family:'onelove';
+	src:url('https://static.tumblr.com/uopakca/76dq4ct45/onelove.otf');
+	}
+
+
+/* tabbed popup styling */
+
+ul#poptabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+   margin-left:0px;
+}
+
+ul#poptabs li {
+   display: inline-block;
+   background-color: transparent;
+   border: solid 1px #63646a;
+   padding: 5px 6px;
+   margin-bottom: 4px;
+   color: #b1b1b1;
+   cursor: pointer;
+}
+
+ul#poptabs li:hover {
+   background-color: transparent;
+}
+
+ul#poptabs li.active {
+   background-color: {color:popup tabs active};
+}
+
+ul#poptab {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+}
+
+ul#poptab li {
+   display: none;
+}
+
+ul#poptab li.active {
+   display: block;
+}
+
+
+/* this is for the tumblr controls */
+
+iframe#tumblr_controls {
+right:2px !important;
+opacity:0.4;
+position: fixed !important;
+filter:alpha(opacity=30);
+-webkit-transition: all 0.7s ease;
+-moz-transition: all 0.7s ease;
+-o-transition: all 0.7s ease;
+}
+iframe#tumblr_controls:hover{
+opacity:0.9;
+position: fixed !important;
+filter:alpha(opacity=80);
+-webkit-transition: all 0.7s ease;
+-moz-transition: all 0.7s ease;
+-o-transition: all 0.7s ease;
+}
+
+
+/* this changes the tooltip when you hover over a link */
+
+#s-m-t-tooltip {
+max-width:400px;
+padding:5px;
+margin:10px 0px 0px 10px;
+background-color:#2A2828; 
+font-family:'gibson', sans-serif;
+font-size:9px;
+letter-spacing:1px;
+font-style:none;
+text-transform:uppercase;
+padding-bottom:3px;
+color:#fff;
+border: 4px double #d7d7d7;
+z-index:999999999999999999999999999999999999;
+}
+
+/* this is what changes the colour when you highlight */
+
+::selection {
+background: #312019;
+color: #a32900;
+}
+
+
+
+/* scrollbars code */
+
+::-webkit-scrollbar-thumb:vertical {
+	background-color:transparent;
+	height:0px;
+	}
+
+::-webkit-scrollbar-thumb:horizontal {
+	background-color:transparent;
+	height:0px;
+	}
+
+::-webkit-scrollbar {
+	background-color:transparent;
+	height:0px;
+	width:0px;
+	}
+
+/* headings */
+
+h1 {
+	font-size:25px;
+	text-align:right;
+	margin-top:0px;
+}
+
+h2 {
+	font-size:25px;
+	text-align:right;
+	margin-top:-10px;
+}
+
+h3 {
+	font-size:13px;
+	line-height:15px;
+	text-transform:lowercase;
+	text-align:center;
+	font-weight:normal;
+	letter-spacing:0px;
+	color:#fff;
+	background-color: transparent;
+	border-top: solid 1px #bfa89a;
+	border-bottom: dashed 1px #bfa89a;
+	width:225px;
+	display: inline-block;
+	padding: 5px 15px;
+	margin-bottom: 1px;
+	margin-left:0px;
+	margin-top:0px;
+}
+
+h4 {
+	color:#fff;
+	font-family: 'onelove', sans-serif;
+   font-size:70px;
+	text-transform:lowercase;
+	font-weight:normal;
+	text-align:center;
+	margin-top:-10px;
+	margin-bottom:-15px;
+}
+
+h5 {
+	font-size:12px;
+	line-height:15px;
+	text-transform:uppercase;
+	text-align:center;
+	font-weight:bold;
+	letter-spacing:0px;
+	color:#7D8FA0;
+	background-color: transparent;
+	border-top: solid 1px #9CA5AC;
+	border-bottom: dashed 1px #9CA5AC;
+	width:100px;
+	display: inline-block;
+	padding: 5px;
+	margin-bottom: 5px;
+	margin-left:20px;
+	margin-top:3px;
+
+}
+
+
+
+ul{
+    list-style-type:square;
+}
+
+
+/* general style */
+
+body {
+	background-color: {color:background};
+	font-family:'gibson', sans-serif;
+	font-size:12px;
+	color:{color:text};
+	background-position:top left;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+}
+
+a {
+	text-decoration:none;
+	color:{color:links};
+	-webkit-transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	-o-transition: all 0.7s ease;
+}
+
+a:hover {
+	color:{color:links hover};
+}
+
+
+b,strong {
+	color:{color:bold};
+	text-transform:uppercase;
+	font-size:15px;
+}
+
+b2 {
+	color:{color:bold};
+	text-transform:uppercase;
+	font-weight:bold;
+	font-size:12px;
+}
+
+b3 {
+	color:{color:text};
+	text-transform:none;
+	font-size:12px;
+	line-height:125%;
+}
+
+i,em {
+	color:{color:italics};
+	font-family: 'Covered By Your Grace', cursive;
+	font-size:19px;
+	line-height:90%;
+}
+
+sup, small, sub { 
+  font-size:12px;
+  }
+
+blockquote {
+	border-left:1px dashed {color:blockquote};
+	padding-left:10px;
+   padding-right:5px;
+	margin:5px 5px 5px 10px;
+   line-height:auto;
+}
+
+blockquote img {
+	max-width:100%;
+	height:auto;
+}
+
+p{
+    margin-bottom:10px;
+}
+
+img {
+	border:none;	
+	max-width:100%;
+}
+
+.caption img {
+   max-width:100%;
+   height:auto;
+   }
+ 
+.posts img {
+   max-width:100%;
+   }
+
+.photoset {
+	max-width:100%;
+}
+
+
+/* tabbed content coding */
+
+.tabcontent {
+	 position:absolute;    
+    width:510px;
+    margin-left:10px;
+    margin-top:0px;
+    overflow:scroll;
+    overflow-x:hidden;
+    height:600px;
+    text-transform:lowercase;
+    background:transparent;
+	 padding-bottom:10px;
+    }
+
+/* tabbed content coding ends here */	
+ 
+
+
+/*post style */
+
+#container {			/*this will contain the posts so they aren't left justified*/
+	position:absolute;
+	left:100px;
+	height:600px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	width:530px;
+	top:100px;
+	background:#544340e6; /* only change the first six numbers. the last two are the transparency */
+	padding-bottom:10px;
+	border-top:1px dashed #a0a0a0;
+	border-left:1px dashed #a0a0a0;
+	border-bottom:1px solid #a0a0a0;
+	border-right:1px solid #a0a0a0;
+}
+
+
+.posts {
+	width:500px;
+	background-color:#2a160040; /* only change the first six numbers. the last two are the transparency */ 
+	padding:5px;
+	margin-bottom:30px;
+}
+
+.postswrap {
+	padding:10px;
+	width:560px;
+}
+
+.permalinks {
+	padding:5px;
+	background-color:#3C2827bf; /* only change the first six numbers. the last two are the transparency */
+	height:12px;
+	border-top:1px solid #281f22;
+	border-bottom:1px dashed #281f22;
+	margin-top:15px;
+}
+
+.permalinks a {
+	text-decoration:none;
+	font-size:9px;
+	color:{color:permalinks};
+}
+
+.permalinks a:hover {
+	color:{color:permalinks hover};
+}
+
+.date {
+	float:left;
+}
+
+.date .fa-bookmark { 
+	color:#aaaaaa; 
+	} 
+
+.reblogs {
+	float:right;
+}
+
+.pinned { 
+	font-weight:bold; 
+   font-size:10px;
+   text-align:center;
+   width:400px;
+}
+
+.pinned a { 
+	text-transform:uppercase!important; 
+	}
+
+.pinned .fa-thumbtack { 
+	margin-right:7px; 
+	font-size:11px; 
+	} 
+	
+
+/* tag styling */
+
+.tags {
+	text-align:center;
+	margin-top:5px;
+}
+
+.tags a {
+	text-decoration:none;
+	font-size:9px;
+	text-transform:uppercase;
+	color:{color:tags};
+}
+
+.tags a:hover {
+	color:{color:tags hover};
+}
+
+/*sidebar styling */
+
+#name {
+	width:200px;
+	color:{color:name};
+	font-family: 'onelove', sans-serif;
+   font-size:80px;
+	text-transform:lowercase;
+	text-align:right;
+	margin-bottom:-8px;
+	margin-left:890px;
+	margin-top:120px;
+}
+
+#sidebar {
+	position:fixed;
+	left:700px;
+	top:200px;
+	height:425px;
+	width:400px;
+	background:{color:background};
+	background-position:top left;
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	border-right: 1px solid #a0a0a0;
+	border-left: 1px dashed #a0a0a0;
+}
+
+
+#sideimage img {
+	width:240px;
+   height:390px;
+   margin-right:2px;
+   float:right;
+   url('{image:sideimg}');
+}
+
+#sidebox {
+	font-size:10px;
+	color:{color:sidebox};
+	text-align:justify;
+	padding:0 8px;
+	height:389px;
+	width:145px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	margin-bottom:5px;
+	margin-top:1px;
+	margin-left:-3px;
+	display:inline;
+	float:left;
+}
+
+/* links styling */
+
+#links {
+	width:200px; 	
+	font-size:12px;
+	padding:5px;
+	text-align:right;
+	margin-left:-63px;
+	margin-top:393px;
+	position:fixed;
+}
+
+#links a {
+	display:inline-block;
+	color:{color:links};
+	padding-left:10px;
+	-webkit-transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	-o-transition: all 0.7s ease;
+}
+
+#links a:hover {
+	color:{color:links hover};
+	letter-spacing:1px;
+}
+
+
+/*pagination styling */
+
+#pagination {
+	position:fixed;
+	top:613px;
+	left:1035px;
+	text-transform:uppercase;
+}
+
+#pagination a {
+	color:{color:pagination};
+	font-size:12px;
+	-webkit-transition: all 0.7s ease;
+	-moz-transition: all 0.7s ease;
+	-o-transition: all 0.7s ease;
+}
+
+#pagination a:hover{
+	color:{color:pagination hover};
+}
+
+/* asks styling */
+
+.asker {
+   font-size:15px;
+   font-style: italic;
+   text-align:right;
+   margin-bottom:5px;
+   padding-bottom:3px;
+}
+
+.question {
+   font-style: italic;
+   padding-left:10px;
+   padding-right:50px;
+   padding-top:10px;
+   padding-bottom:10px;
+   border-left:1px dashed #000;
+   background-color:#915f24bf; /* only change the first six numbers. the last two are the transparency */
+}
+
+
+iframe#ask_form { 
+		width: 485px;
+      min-height: 220px; 
+      }
+      
+iframe#submit_form { 
+		width: 485px;
+      min-height: 220px; 
+      }
+      
+
+/* quotes stlying */
+
+.quote {
+   font-size:13px;
+   letter-spacing:1px;
+   text-align:center;
+   border-left:1px dashed #000;
+   margin-bottom:5px;
+   padding-left:10px;
+   padding-right:50px;
+   padding-top:10px;
+   padding-bottom:10px;
+   background-color:#915f24bf; /* only change the first six numbers. the last two are the transparency */
+}
+
+.quotesource {
+   font-size:10px;
+   letter-spacing:1px;
+   text-align:center;
+   margin-bottom:5px;
+}
+
+
+/* tumblr audio code */
+    
+.playerbuttonbg {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 19px;
+    height: 19px;
+    background-color: transparent;
+    padding: 10px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    opacity: .4;
+    filter: alpha(opacity=40);
+    -moz-opacity: 0.4;
+    -khtml-opacity: 0.4;
+    transition: opacity .7s ease-in-out;
+    -moz-transition: opacity .7s ease-in-out;
+    -webkit-transition: opacity .7s ease-in-out;
+    }
+           
+    .playerbuttonbg:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    }
+   
+    .newplayerbutton {
+    position: relative;
+    width: 19px;
+    height: 19px;
+    overflow: hidden;
+    }
+   
+    .playerbuttonhug {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    }
+       
+    .tumblr_audio_player {
+    height: 90px;
+    width: 270px;
+    -moz-transform: scale(0.60, 0.60);
+    -webkit-transform: scale(0.60, 0.60);
+    -o-transform: scale(0.60, 0.60);
+    -ms-transform: scale(0.60, 0.60);
+    transform: scale(0.60, 0.60);
+    -moz-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    -o-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    }
+ 
+    .audioimgwrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+    width: 79px;
+    height: 79px;
+    }
+           
+    .audioimgwrapper img {
+    width: 100%;
+    height: auto;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;                
+    }
+   
+    .trackdetails {
+    width: auto;
+    line-height:14px;
+    border: 0px solid black;
+    display:inline-block;
+    margin-left: 90px;
+    padding-top:20px;
+    min-height:70px;
+    }
+   
+    .audiowrapper {
+    position: relative;
+    display:inline-block;
+    }
+    
+/* tumblr audio code ends here */
+
+/* IMESSAGE CHAT POST */
+.answer span,.convo li{margin:0 0 5px;border-radius:1em;padding:.5em 10px;max-width:75%;clear:both;position:relative}.answer .them,.user_1,.user_3,.user_5,.user_7,.user_9,.user_11{float:left;background:#e5e5ea;color:#000;left:3px}.me::after,.user_1::after,.user_3::after,.user_5::after,.user_7::after,.user_9::after,.user_11::after{content:"";position:absolute;left:-.5em;bottom:0;width:.5em;height:1em;border-right:.5em solid #e5e5ea;border-bottom-right-radius:1em .5em}.answer .me,.user_2,.user_4,.user_6,.user_8,.user_10,.user_12{right:3px;float:right;background-color:#e8f3f9;color:#000}.them::after,.user_2::after,.user_4::after,.user_6::after,.user_8::after,.user_10::after,.user_12::after{content:"";position:absolute;right:-.5em;bottom:0;width:.5em;height:1em;border-left:.5em solid #e8f3f9;border-bottom-left-radius:1em .5em}.me p,.answer,.asked span{padding:0;margin:0}.answer{overflow:hidden}
+        .asked p {
+            text-align: left;
+            margin: 0 0px 10px 0px;
+            padding: 0;
+            color: #666666;
+            font-family: 'Inconsolata', Inconsolata;
+            font-size: 12px;
+            line-height: 0px;
+        }
+        .footerright .viasrc {
+            float: left;
+        }
+        .asked a {
+            margin:0;padding:0;
+        }
+.user_4{background-color:#55caff;color:#fff}.user_4::after{border-color:#55caff}.user_6{background-color:#60f246;color:#fff}.user_6::after{border-color:#60f246}.user_5{background-color:#9ff3fc;color:#000}.user_5::after{border-color:#9ff3fc}.user_3{background-color:#25c413;color:#fff}.user_3::after{border-color:#25c413}.user_7{background-color:#9b9b9b;color:#fff}.user_7::after{border-color:#9b9b9b}.user_8{background-color:#0d9321;color:#fff}.user_8::after{border-color:#0d9321}.user_9{background-color:#606060;color:#fff}.user_9::after{border-color:#606060}
+        .convo {
+            overflow: hidden;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+/* popup styling */
+
+.popup_block{
+    display:none;
+    background:{color:popup background};
+    color:{color:popup text}; /* font colour for the popup */
+    padding:20px;
+    border-top:1px dashed #a0a0a0;
+    border-bottom:1px solid #a0a0a0;  /* if you want a solid white pop-up, delete this */
+    float:left;
+    position:fixed;
+    top:431px;
+    left:921px;
+    width:360px; 
+	 height:383px; 
+	 overflow-y:scroll; 
+	 overflow-x:hidden;
+    z-index: 99999;
+    -webkit-box-shadow: 0px 0px 0px #000; /* delete for solid white */
+    -moz-box-shadow: 0px 0px 0px #000; /* delete for solid white */
+    box-shadow: 0px 0px 0px #000; /* delete for solid white */
+}
+ 
+*html #fade {position: absolute;}
+*html .popup_block {position: absolute;}
+#fade {
+    display:none;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index:9999;
+    background:#000; /* change to #fff for solid white */
+    opacity:0; /* change to opacity:1; */
+}
+
+/* end of styling */
+
+
+
+/* tabbed page code */
+
+#headernav {
+    left:50%;
+    top:50%;
+    overflow:scroll;
+    text-align:justify;
+    color:#eeeeee;
+    font-size:12px;
+}
+
+ul#tabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+   margin-left:3px;
+}
+
+ul#tabs li {
+   display: inline-block;
+   background-color: transparent;
+   border: solid 1px #6a6a6a;
+   padding: 5px 15px;
+   margin-bottom: 4px;
+   margin-left:2px;
+   color: {color:verse muse tabs};
+   cursor: pointer;
+}
+
+ul#tabs li:hover {
+   background-color: {color:verse muse tabs hover};
+}
+
+ul#tabs li.active {
+   background-color: {color:verse muse tabs active};
+   display: inline-block;
+}
+
+ul#tab {
+   list-style-type: none;
+   margin-top: 10px;
+   padding: 0;
+}
+
+ul#tab li {
+   display: none;
+}
+
+ul#tab li.active {
+   display: block;
+}
+ 
+#verse {
+   height:100px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:2px;
+   margin-right:4px;
+	overflow:auto;
+   }
+
+#left img {
+   float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:50px;
+	height:75px;
+	border:1px dashed #a8a8a8;
+   }
+   
+#right img {
+  float:right;
+  margin-right:1px;
+  margin-left:8px;
+  width:50px;
+  height:75px;
+  border:1px dashed #a8a8a8;
+   }
+   
+ /* tabbed muse/verse tab */
+ 
+
+/* mains & exclusives tabbed page code */
+
+div.shipimg {
+ 	 margin-left:0px;
+ 	 }	 
+ 	 
+div.shipimg img {
+	width:50px;
+  	height:75px;
+  	border:1px dashed #a8a8a8;
+}
+ 	 
+
+ 
+
+ /* tabbed page code */
+
+#headernav {
+    left:50%;
+    top:50%;
+    overflow:scroll;
+    text-align:justify;
+    color:#eeeeee;
+    font-size:12px;
+}
+
+ul#mvtabs {
+   list-style-type: none;
+   padding: 0;
+   text-align: center;
+   margin-left:3px;
+}
+
+ul#mvtabs li {
+   display: inline-block;
+   background-color: transparent;
+   border: solid 1px #6a6a6a;
+   padding: 5px 15px;
+   margin-bottom: 4px;
+   margin-left:2px;
+   color: {color:verse muse tabs};
+   cursor: pointer;
+}
+
+ul#mvtabs li:hover {
+   background-color: {color:verse muse tabs hover};
+}
+
+ul#mvtabs li.active {
+   background-color: {color:verse muse tabs active};
+   display: inline-block;
+}
+
+ul#mvtab {
+   list-style-type: none;
+   margin-top: 10px;
+   padding: 0;
+}
+
+ul#mvtab li {
+   display: none;
+}
+
+ul#mvtab li.active {
+   display: block;
+}
+ 
+#verse {
+   height:100px;
+	background-color: transparent;
+	padding-bottom:1px;
+	padding-top:2px;
+   margin-right:4px;
+	overflow:auto;
+   }
+
+#left img {
+   float:left;
+	margin-right:8px;
+	margin-left:1px;
+	width:50px;
+	height:75px;
+	border:1px dashed #a8a8a8;
+   }
+   
+#right img {
+  float:right;
+  margin-right:1px;
+  margin-left:8px;
+  width:50px;
+  height:75px;
+  border:1px dashed #a8a8a8;
+   }
+   
+   
+/* navigation tab in popup */
+
+.button {
+  display:inline-block;
+  text-align:center;
+  width:90px;
+  margin:4px;
+  padding:2px;
+  background-color:{color:buttons background};
+  color:{color:buttons};
+  border-top: 1px solid #ddd;
+  border-bottom: 1px dashed #ddd;
+  border-radius:2px;
+	}
+
+.button:hover {
+  border-top: 1px dashed #ddd;
+  border-bottom: 1px solid #ddd;
+	}
+	
+
+/* tab links coding */
+
+   /* Clearfix */
+    .tab-links:after {
+        display:block;
+        clear:both;
+        content:'';
+        
+                
+    }
+    
+ 
+    .tab-links li {
+        margin-left:1px;
+        padding:0px;
+        display:inline-block;
+        list-style:none;
+        text-transform:uppercase;
+    }
+ 
+        .tab-links a {
+            display:inline-block;
+				color:{color:links};
+				padding-left:10px;
+				-webkit-transition: all 0.7s ease;
+				-moz-transition: all 0.7s ease;
+				-o-transition: all 0.7s ease;
+        }
+        
+      .tab-links a:hover {
+      	color:{color:links hover};
+			letter-spacing:1px;
+      }
+
+/* end of tab links coding */
+
+/* tab content -- best not to touch this either */
+
+  .tab-content {
+    }
+ 
+        .tab {
+            display:none;
+        }
+ 
+        .tab.active {
+            display:block;
+        }
+
+/* end of tab content coding */	
+
+
+/* this is the credit coding. DO NOT REMOVE */
+    
+   #credit {
+    font-size:9px;
+    font-family:cambria;
+    font-style:italic;
+    letter-spacing:1px;
+    -moz-transition-duration:0.5s;
+    -webkit-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    }
+ 
+#credit a {
+    background-color:transparent;
+    padding:5px;
+    position:fixed;
+    right:15px;
+    bottom:10px
+    }  
+ 
+#credit a:hover {
+    background-color:transparent;
+    }    
+    
+/* credit coding ends here */
+
+
+/* Making IE6 Understand Fixed Positioning */
+
+*html #fade {
+ position: absolute;
+}
+*html .popup_block {
+ position: absolute;
+}
+    {CustomCSS}
+    
+  
+pre {
+   white-space: pre-wrap;      
+   white-space: -moz-pre-wrap;
+   white-space: -pre-wrap;    
+   white-space: -o-pre-wrap;  
+   word-wrap: break-word;
+   }   
+
+</style></head>
+    
+<body>
+
+<div id="name">{text:name}</div>
+
+<div id="sidebar"> 
+
+<div id="sidebox">{text:sidebox}</div>
+
+<div id="sideimage"><img src="{image:sideimg}"></div>
+
+<div id="links">
+<div class="tabs">
+<ul class="tab-links">
+<li class="active"><a href="/" title="refresh"><span class="fas fa-cogs" style="font-size:110%"></span></a></li>
+<li><a href="#tab2" title="questions?">01.</a></li>
+<li><a href="#tab3" title="guidelines">02.</a></li>
+<!-- <li><a href="#tab4" title="biography">03.</a></li> (uncomment this if you use the biography tab & adjust the tab id numbers & link numbers accordingly. also adjust the links width in the css)-->
+<li><a href="#tab4" title="muses">03.</a></li>
+<li><a href="#tab5" title="navigation">04.</a></li>
+</div>
+
+</div> 
+
+<div id="pagination">
+{block:Pagination} 
+{block:PreviousPage}<a href="{PreviousPage}"><span class="fas fa-arrow-left" style="font-size:100%"></span></a>{/block:PreviousPage} &nbsp;page&nbsp; {block:NextPage}<a href="{NextPage}"><span class="fas fa-arrow-right" style="font-size:100%"></b></span></a>
+{/block:NextPage}
+{/block:Pagination}
+</div>
+
+</div> 
+
+
+<div id="container">
+
+<!-- tabs -->
+<div class="tabs">
+
+<!--  TAB 1  -->
+<div id="tab1" class="tab active">
+<div class="tab-content">
+
+{block:Posts}
+{block:NoRebloggedFrom}
+{block:RebloggedFrom}
+{ReblogParentName}
+{/block:RebloggedFrom}
+{/block:NoRebloggedFrom}
+
+<div class="postswrap">
+<div class="posts"> 
+
+{block:Text}<h1>{block:Title}{Title}{/block:Title}</h1>{Body}{/block:Text}
+
+{block:Photo}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{block:Caption}{Caption}{/block:Caption}{/block:Photo}
+
+{block:Panorama}{LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}{block:Caption}{Caption}{/block:Caption}{/block:Panorama}
+
+{block:Photoset}{Photoset-500}{block:Caption}{Caption}{/block:Caption}{/block:Photoset}
+
+{block:Quote}<div class="quote">{Quote}</div>{block:Source}<div class="quotesource">&mdash; {Source}</div>{/block:Source}{/block:Quote}
+
+{block:Link}<h1><a href="{URL}" class="link" {Target}>{Name}</a></h1>{block:Description}{Description}{/block:Description}{/block:Link}
+
+{block:Chat}
+          {block:Title}
+            <h1>{Title}</h1>{/block:Title}<br>
+<ul class="convo">{block:Lines}<li class="line_{Alt} user_{UserNumber}">{block:Label}<span class="label"><strong>{Label}</strong></span>{/block:Label}
+{Line}</li>{/block:Lines}</ul>
+            {/block:Chat}
+            
+                                    
+{block:Video}{Video-500}{block:Caption}{Caption}{/block:Caption}{/block:Video}
+
+<!--AUDIO POST-->
+{block:Audio}
+{block:AudioPlayer}
+<div class="audiowrapper">
+{block:AlbumArt}
+<div class="audioimgwrapper"><img src="{AlbumArtURL}"></div>
+{/block:AlbumArt}
+ 
+<div class="playerbuttonbg">
+<div class="newplayerbutton">
+<div class="playerbuttonhug">
+{AudioPlayerWhite}
+</div></div></div>
+<div class="trackdetails">
+{block:TrackName}<b>Track:</b> {TrackName} <br/>{/block:TrackName}
+{block:Artist}<b>Artist:</b> {Artist} <br/>{/block:Artist}
+{block:Album}<b>Album:</b> {Album} <br/>{/block:Album}
+</div></div>
+{/block:AudioPlayer}
+<br /><br />
+{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+{/block:Audio}
+
+{block:Answer}
+<div class="asker">{Asker} left a message</div>
+<div class="question">{Question}</div>
+{Answer}
+{/block:Answer}
+
+<div class="permalinks"> 
+<div class="date"><span class="fas fa-bookmark" style="font-size:75%"></span> &nbsp; <a href="{PERMALINK}" title="{ShortDayOfWeek} {ShortMonth}.{DayOfMonthWithZero}.{Year}">{ShortDayOfWeek} {ShortMonth}.{DayOfMonthWithZero}.{Year} </a> &nbsp;|&nbsp; <a href="{PERMALINK}" title="{NoteCountWithLabel}"><span style="color:red; font-size:105%">&#10084;</span>&nbsp;{NoteCount}</a></div>
+<div class="reblogs">{block:RebloggedFrom}
+<a title="via: {ReblogParentName}" href="{ReblogParentURL}"><span class="fas fa-share-alt"></span></a> &nbsp;{/block:RebloggedFrom}{block:ContentSource} <a title="source: {SourceTitle}" href="{SourceURL}"><span class="fas fa-cog"></span></a>{/block:ContentSource} &nbsp;<a href="{ReblogURL}" title="reblog this post"><span class="fas fa-redo"></span></a>
+</div>
+{block:HomePage}{block:PinnedPostLabel}<div class="pinned"><a href="{Permalink}"><span class="fas fa-thumbtack"></span>{PinnedPostLabel}</a></div>{/block:PinnedPostLabel}{/block:HomePage}
+</div>
+
+{block:PermalinkPage}
+<div class="tags">
+<b2>filed under:</b2>&nbsp;
+{block:HasTags}{block:Tags}&nbsp;<a title="{Tag}" href="{TAGURL}">{TAG}</a>&nbsp; &nbsp; {/block:Tags}{/block:HasTags}
+</div>
+{/block:PermalinkPage}
+
+</div>
+
+<div class="postnote">
+{block:PostNotes}{PostNotes-16}{/block:PostNotes}
+</div>
+
+</div>
+{/block:Posts}
+</div>
+
+{block:ContentSource}
+<!-- {SourceURL}{block:SourceLogo}<img src="{BlackLogoURL}"
+width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />
+{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+</div>
+
+<!-- -------------------------- TAB 2 -------------------------- -->
+
+<div id="tab2" class="tab">
+    <div class="tabcontent">
+       <div id="headernav">
+<h4>questions and answers</h4>
+<ul id="tabs">
+     <li class="active">questions</li>
+     &nbsp;
+     <li>submissions</li>
+</ul>  
+
+<ul id="tab">
+<li class="active">
+<iframe id="ask_form" style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/ask_form/alteredcanon.tumblr.com" frameborder="0" scrolling="no" width="485" height="300"></iframe>
+</li>
+
+<li>
+<iframe id="submit_form" style="background-color: transparent; overflow: hidden;" src="https://www.tumblr.com/submit_form/alteredcanon.tumblr.com" frameborder="0" scrolling="no" width="485" height="300"></iframe>
+</li>
+    </div>
+    </div>
+</div>
+        
+        
+<!-- -------------------------- TAB 3 -------------------------- -->
+
+<div id="tab3" class="tab">
+    <div class="tabcontent">
+    <div id="headernav">
+        <h4>guidelines and credits</h4>
+        <ul id="tabs">
+     <li class="active" style="width:100px">rules</li>
+		&nbsp;
+     <li style="width:100px">credits</li>
+     &nbsp;
+     <!-- CURRENTLY HIDDEN <li style="width:100px">mains/exclusives</li> -->
+</ul>  
+
+<ul id="tab">
+<li class="active">
+<h4>guidelines</h4>
+<p><center><h3>canon divergent&nbsp;&nbsp;</h3></center>
+
+<p>All of the muses on this blog are significantly divergent from their canon of origin. I am willing to interact with characters outside of the canon I have kept only after plotting. This is to make sure that we are both on the same page about whatever alternate canon (if any) is between our characters. Please see each muse for information about their canon and divergences. Due to the nature of the muses, dark themes will be present on this blog.
+<p>
+<br />
+<p><center><h3>following/interactions&nbsp;&nbsp;</h3></center>
+
+<p>I am happy to interact with those that I do not follow in the form of memes or answering open starters. I do not always follow or follow back those that I write with. If your blog indicates that you do not want to write with one of my muses, I will not follow you back. We can still write together, but this is the easiest way for me to make sure I do not violate your boundaries about which muses you do or do not want to write with for your comfort. I prefer to write with people over 21, because I am 30+. If your age is not listed on your blog, I'm not interested. If you post a lot of spoiler content, I am unlikely to follow you. please always tag your spoilers. 
+<p>
+<br />
+<p><center><h3>tagging&nbsp;&nbsp;</h3></center>
+
+<p>Dark themes will be present on this blog. My muses do have backstory that contains several triggers, but most do not often come up in roleplay. I will do my best to tag them, however I may occasionally forget. Triggers will typically be tagged as <b>trigger cw</b>, such as needles cw or incest cw. If you need me to tag a particular trigger, please let me know. 
+<p><b>nsfw</b> will alwayss be tagged as <u>NSFW.</u> <u>NSFW</u>, and <u>NSFR</u> - this includes both images and text. 
+<p>
+<br />
+<p><center><h3>established relationships&nbsp;&nbsp;</h3></center>
+
+<p>As a canon-divergent blog, I am happy to write pre-established relationships. However pre-established relationships other than casual friendships need to be plotted ahead of time. This is to make sure that we are both on the same page about what their relationship is or was before we get too far into a thread. It does not have to be heavily plotted, it simply needs to be discussed. 
+<p>
+<br />
+<p><center><h3>formatting&nbsp;&nbsp;</h3></center>
+
+<p>I use icons (usually from Hollow Art) that are 100 x 100. Sometimes I bother with small text, most of the time I don't. If you write with small text, I will probably remember to match it. I care more about the writing than what it looks like. I am also happy to not use icons if you'd rather not. That's cool too.
+<p>
+<br />
+<p><center><h3>activity&nbsp;&nbsp;</h3></center>
+
+<p>I run off of a queue. This benefits you and I both in many ways. You don't get all of our threads back at once, and neither do I. Currently my queue kicks out about 2-3 replies a day to maintain a steady stream of replies for everyone without anyone getting too overwhelmed. At this time, most things are only lingering in the drafts box for a day or two before getting queued. Embrace the queue. If you would like to know when a thread will be posting, please feel free to ask. 
+
+<p>
+<br />
+<p><center><h3>faceclaims &nbsp;&nbsp;</h3></center>
+
+<p>There are currently a few faceclaims that I'm not particularly fond of, but I believe that character is more important than what they look like. If you have a problem with any of my faceclaims, you can block them by the following - <b>visage : Character Name</b> (such as <u>visage : Wanda Maximoff</u>) or <b>muse âˆž Character Name</b> (such as <u>muse âˆž Wanda Maximoff</u>) Characters that I do not play but are present in gifsets on my blog are tagged <b>person : Character Name</b> (such as <u>person : Elena Gilbert</u>)
+<p>
+<br />
+
+<p><center><h3>contact&nbsp;&nbsp;</h3></center>
+
+<p>This is my only blog, so you can contact me via ask or on discord @ <b2>Faith#4578</b2> for plotting/discussions. 
+
+<p>
+</li>
+
+<li>
+<h4>credits</h4>
+<p><b>coding:</b> &nbsp;&nbsp;<a href="https://houseofsol.tumblr.com">@houseofsol</a><br />
+<p><b>images:</b> <!-- &nbsp;&nbsp;<a href="http://unsplash.com">unsplash</a> -->  &nbsp;&nbsp;<a href="https://www.deviantart.com/tagbacktv/art/Elephants-Trunk-Nebula-856885214">Elephant's Trunk Nebula</a> by <a href="https://www.youtube.com/channel/UCXbYdeldt9XqrXBB1kl00Mg">TagBackTV</a> for sidebar and placeholder images<br />
+</li>
+
+<li>
+<h4>mains/exclusives</h4>
+<p>
+<ul id="mvtabs">
+    <li style="width:100px">exclusives</li>&nbsp; 
+    <li style="width:100px">mains</li>&nbsp; 
+    <li style="width:100px">connections</li>&nbsp;
+    </ul>
+<br />
+
+<ul id="mvtab">
+<li class="active">
+<center><h3>exclusives</h3></center>
+<p>
+<div class="shipimg">
+<center>
+<a title="exclusive one"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp; 
+<a title="exclusive two"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="exclusive three"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="exclusive four"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="exclusive five"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="exclusive six"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+</center>
+</div>
+
+
+</li>
+
+<li>
+<center><h3>mains</h3></center>
+<p>
+<div class="shipimg">
+<center>
+<a title="main one"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp; 
+<a title="main two"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="main three"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="main four"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="main five"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="main six"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+</center>
+</div>
+
+</li>
+
+<li>
+<center><h3>connections</h3></center>
+<p>
+<div class="shipimg">
+<center>
+<a title="connection one"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp; 
+<a title="connection two"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection three"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection four"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection five"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection six"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+</center>
+</div>
+
+</li>
+
+</ul> 
+</li>
+
+   </div></div>
+</div>   
+ 
+
+<!-- -------------------------- TAB 4 -------------------------- -->
+
+<div id="tab4" class="tab">
+    <div class="tabcontent">
+    <div id="headernav">
+        <h4>muses</h4>
+        <ul id="tabs">
+     <li class="active" style="width:85px">main&nbsp;muses</li>
+		&nbsp;
+     <li style="width:85px">selective&nbsp;muses</li>
+     &nbsp; 
+     <li style="width:85px">by&nbsp;request&nbsp;only</li>
+     &nbsp;
+     <!-- <li style="width:85px">A FOURTH KIND OF MUSES</li> -->
+</ul>  
+
+<ul id="tab">
+<li class="active">
+<p><b3>Main muses are the most likely to be the most active on the blog. You are welcome to interact with these muses after reading their biographies for their specific canon divergences. These muses have the most verses available to interact with, and are easiest for me to fit into other universes. I am always happy to plot new alternate universes for these muses.</b3></p>
+<p><center><strike>Click names for details</strike></center></p>
+<p>
+<center><h3>the Black Widow</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/deJEv43.png"></div>
+<a href="#?w=360" rel="01" class="poplight" title="About Natasha"><b>Natasha Romanoff</b></a> &mdash; <i>Marvel Cinematic Universe</i> <br />&mdash; Canon-Divergent post <u>The Avengers: Age of Ultron</u> <p><b2>Natasha Romanoff used to be a spy, until ...</b2> Natasha is a former government agent, who has accumulated a lot of baggage over her enhanced life. She currently uses her varied skills to help those she can as a freelance agent. Natasha often goes undercover and occasionally works with various government agencies after the collapse of SHIELD. 
+<p><b>CANON NOTES</b> &mdash; Natasha's default universe will have her living in New York City. It will not include the events of Civil War, Infinity War, or Endgame. <p> <b2>*An alternate universe following Endgame may be available in the future. Natasha is currently open to a variety of romantic interests. I am also open to plotting better versions of any of the events I am excluding in my canon.</b2>
+</div>
+<p>
+<center><h3>the Scarlet Witch</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/YQU6OJd.png"></div>
+<a href="#?w=360" rel="02" class="poplight" title="About Wanda"><b>Wanda Maximoff</b></a> &mdash; <i>Marvel Cinematic Universe</i> <br />&mdash; Canon-Divergent post <u>The Avengers: Age of Ultron</u> <p><b2>Wanda Maximoff did not sign up for this ...</b2> Wanda Maximoff is a former hero trying to find her way in the world. Wanda was given her supernatural abilities as the result of illegal human experimentation after the death of her parents. Her powers include various forms of neuro-electric interfacing, including telekinesis, mental manipulation, and telepathy, among others. The only thing limiting Wanda, is Wanda herself. 
+<p><b>CANON NOTES</b> &mdash; Wanda's default universe will have her living in the Avengers headquarters as she tries to figure out her life after the collapse of Sokovia. <p> <b2>*An alternate universe following Endgame and including WandaVision may be available in the future. Wanda is currently open to a variety of romantic interests, but these will most likely be more of a slow burn. I am also open to plotting better versions of any of the events I am excluding in my canon.</b2>
+</div>
+
+</li>
+
+<li>
+<p><b3>Selective muses are currently still finding their place in the world. These are muses that have been retired for a little bit longer, and often have more private/selective verses than the main muses. These muses may require a little more plotting and tweaking to fit into other universes. You are welcome to interact with these muses after reading their biographies for their specific canon divergences.</b3></p>
+<p>
+<center><h3>the undead beauty queen</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/xJrv7Rm.png"></div>
+<a href="#?w=360" rel="03" class="poplight" title="About Caroline"><b>Caroline Forbes</b></a> &mdash; <i>The Vampire Diaries</i> <br /> &mdash; Canon-Divergent post <u>The Vampire Diaries - Season Four</u> <p><b2>Caroline Forbes is sixteen going on seventeen, forever ...</b2> Caroline Forbes had a life plan. A way to get out of the small town that she grew up in, Mystic Falls, Virginia. That plan did not include being turned into a vampire, but she's learned to adapt to the blood lust and the hunger, and she's doing pretty damn good for herself. She joined an event planning firm right out of college, and is in high demand for everything to planning other people's weddings to corporate events. Things are good, as long as she stays out of the spotlight, and hides in the shadows. 
+<p><b>CANON NOTES</b> &mdash; Caroline's default universe has her living in a loft in SoHo, and working with for a top event planning firm. Unfortunately she has already been there for a few years, so it's starting to be time to move on to somewhere new. <p><b2>*Caroline is currently open to possible romantic adventures, but also has several verses in which she is romantically entangled. I am most likely to default to Caroline being in a committed relationship with <a Href="https://ialmostbelieveyou.tumblr.com/">Niklaus</a> unless otherwise discussed.</b2>
+</div>
+<p>
+<center><h3>the last of her line</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/1RMFnUe.png"></div>
+<a href="#?w=360" rel="04" class="poplight" title="About Hayley"><b>Hayley Marshall</b></a> &mdash; <i>The Vampire Diaries</i> <br /> &mdash; Canon-Divergent post <u>The Vampire Diaries - Season Four</u> <p><b2>Hayley Marshall has always been something of a lone wolf ...</b2> Hayley Marshall had always known she was adopted. She'd had a pretty good life, well-off parents, even after they had her sister things hadn't been too bad. Until one night turned her rich party girl life upside down. Now she spends one night a month, howling under the moon, a lone wolf for real. Luckily for Hayley, there are a lot weirder things than her in New Orleans.
+<p><b>CANON NOTES</b> &mdash; Hayley's default universe will have her living in New Orleans, Louisiana trying to find a connection to her past, and her birth parents. <p><b2>*Hayley is currently open to a variety of romantic interests, and is willing to interact with characters from The Originals only after plotting.</b2>
+</div>
+<p>
+<center><h3>the changeling child</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/91m68Lt.png"></div>
+<a href="#?w=360" rel="05" class="poplight" title="About Raven"><b>Raven DarkhÃ¶lme</b></a> &mdash; <i>X-Men First Class and X-Men Cinematic Universe</i> <br /> &mdash; Canon-Divergent post <u>X-Men First Class</u> <p><b2>Raven DarkhÃ¶lme can be anyone she wants, but who is she ...</b2> After learning to embrace her abilities, Raven worked to establish a life for herself in New Orleans. She owns a vaguely run down looking bar that is more popular among the locals than the tourists, and works to help her fellow mutants and those who are <i>other</i>. Occasionally she keeps in touch with those from her past, but mostly she keeps to herself. It's easier to blend in that way.
+<p><b>CANON NOTES</b> &mdash; Raven's default universe will have her living in New Orleans, Louisiana, where she uses her abilities in less than legal ways to support a lavish lifestyle. <strike>She's a smuggler. She smuggles things.</strike> She also owns a bar. <p><b2>*Raven is currently open to a variety of romantic interests. I am also open to plotting better versions of any of the events I've excluded from her canon.</b2>
+</div>
+
+
+</li>
+
+<li>
+<p><b3>This muse is available by request only at this time. However if you would like to write with her, I would be happy to plot with you.</b3></p>
+<p>
+<center><h3>the good doctor</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/VZOEoPF.png"></div>
+<a href="#?w=360" rel="06" class="poplight" title="About Jemma"><b>Jemma Simmons</b></a> &mdash; <i>Agents of SHIELD - Marvel Television</i> <br /> &mdash; Canon-Divergent post <u>Agents of SHIELD - Season One</u> <p><b2>Jemma Simmons was built for science not subterfuge ...</b2> Unfortunately for Jemma, working for SHIELD seems to require both. She's never been a good liar, but she'll need to utilize ALL of her skills to make it work. 
+<p><b>CANON NOTES</b> &mdash; Jemma's default universe currently has her living with her green-card husband <strike>she's unexpectedly falling for</strike> <a href="https://callitcoulson.tumblr.com/">Clint Barton</a> in New York City, and working for the shadow version of SHIELD under Phil Coulson. <p><b2>*Jemma is currently <b>not</b> open to other romantic relationships. I am open to plotting better versions of any of the events I have excluded from her canon.</b2>
+</div>
+<!-- <p>
+<center><h3>verse two</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/JjXeBO2.png"></div>
+<a href="/"><b>verse two</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div> -->
+
+</li>
+
+<!--  ----- THIS IS WHERE A FOURTH DIVISION OF MUSES WOULD GO IF WE HAD ONE -------
+<li>
+<center><h3>verse three</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/JjXeBO2.png"></div>
+<a href="/"><b>verse three</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+<p>
+<center><h3>verse four</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/JjXeBO2.png"></div>
+<a href="/"><b>verse four</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+
+</li> 
+END OF FOURTH DIVISION OF MUSES HERE --->
+
+</ul> 
+</li>
+
+    </div></div>
+</div>       
+
+<!-- -------------------------- TAB 5 -------------------------- -->
+
+<div id="tab5" class="tab">
+    <div class="tabcontent">
+    <div id="headernav">
+        <h4>navigation</h4>
+        <ul id="tabs">
+     <li class="active" style="width:100px">in character</li>
+		&nbsp;
+     <li style="width:100px">out of character</li>
+</ul>  
+
+<ul id="tab">
+<li class="active">
+<h4>in character</h4>
+<center><p><h3>posts by character</h3>
+<p>
+<a href="/tagged/muse-%E2%88%9E-Natasha-Romanoff" class="button">Natasha</a> 
+&nbsp;
+<a href="/tagged/muse-%E2%88%9E-Wanda-Maximoff" class="button">Wanda</a>
+&nbsp;
+<a href="/tagged/muse-%E2%88%9E-Caroline-Forbes" class="button">Caroline</a>
+<br />
+<a href="/tagged/muse-%E2%88%9E-Hayley-Marshall" class="button">Hayley</a> 
+&nbsp;
+<a href="/tagged/muse-%E2%88%9E-Raven-Darkholme" class="button">Raven</a>
+&nbsp;
+<a href="/tagged/muse-%E2%88%9E-Jemma-Simmons" class="button">Jemma</a>
+<p>
+<h3>headcanons by character</h3>
+<p>
+<a href="/tagged/headcanon-%2F%2F-Natasha-Romanoff-%2F%2F-DO-NOT-REBLOG" class="button">Natasha</a> 
+&nbsp;
+<a href="/tagged/headcanon-%2F%2F-Wanda-Maximoff-%2F%2F-DO-NOT-REBLOG" class="button">Wanda</a>
+&nbsp;
+<a href="/headcanon-%2F%2F-Caroline-Forbes-%2F%2F-DO-NOT-REBLOG" class="button">Caroline</a>
+<br />
+<a href="/tagged/headcanon-%2F%2F-Hayley-Marshall-%2F%2F-DO-NOT-REBLOG" class="button">Hayley</a> 
+&nbsp;
+<a href="/tagged/headcanon-%2F%2F-Raven-Darkholme-%2F%2F-DO-NOT-REBLOG" class="button">Raven</a>
+&nbsp;
+<a href="/tagged/headcanon-%2F%2F-Jemma-Simmons-%2F%2F-DO-NOT-REBLOG" class="button">Jemma</a>
+<p> 
+<h3>starters by character</h3>
+<p>
+<a href="/tagged/starter-%2F%2F-open-âˆž-Natasha-Romanoff" class="button">Natasha</a> 
+&nbsp;
+<a href="/tagged/starter-%2F%2F-open-âˆž-Wanda-Maximoff" class="button">Wanda</a>
+&nbsp;
+<a href="/tagged/starter-%2F%2F-open-âˆž-Caroline-Forbes" class="button">Caroline</a>
+<br />
+<a href="/tagged/starter-%2F%2F-open-âˆž-Hayley-Marshall" class="button">Hayley</a> 
+&nbsp;
+<a href="/tagged/starter-%2F%2F-open-âˆž-Raven-Darkholme" class="button">Raven</a>
+&nbsp;
+<a href="/tagged/starter-%2F%2F-open-âˆž-Jemma-Simmons" class="button">Jemma</a>
+</center>
+
+
+</li>
+
+<li>
+<h4>out of character</h4>
+<center><p><h3>starting tags?</h3>
+<p>
+<a href="https://forms.gle/z6kXjQjr3TYHbSeh7" class="button">interest tracker</a>
+&nbsp;
+<a href="/tracker" class="button">reply schedule</a>
+&nbsp;
+<a href="https://discord.gg/devtearoom" class="button">RPC Dev</a>
+<br />
+<a href="/tagged/queued-%E2%88%9E-leave-a-message" class="button">meme tag</a> 
+&nbsp;
+<a href="/tagged/meme-call-%E2%88%9E-open" class="button">request memes</a>
+&nbsp;
+<a href="/tagged/wishlist-%E2%88%9E-general-wishlist" class="button">general wishlist</a>
+<br />
+<a href="/tagged/starter-call-%E2%88%9E-open" class="button">starter call</a>
+&nbsp;
+<a href="/tagged/plotting-call-%E2%88%9E-open" class="button">plotting call</a> 
+&nbsp;
+<a href="/tagged/shipping-call-%E2%88%9E-open" class="button">shipping call</a>
+
+
+
+<p>
+<h3>wishlist by character</h3>
+<p>
+<a href="/tagged/wishlist-%E2%88%9E-Natasha-Romanoff" class="button">Natasha</a> 
+&nbsp;
+<a href="/tagged/wishlist-%E2%88%9E-Wanda-Maximoff" class="button">Wanda</a>
+&nbsp;
+<a href="/tagged/wishlist-%E2%88%9E-Caroline-Forbes" class="button">Caroline</a>
+<br />
+<a href="/tagged/wishlist-%E2%88%9E-Hayley-Marshall" class="button">Hayley</a> 
+&nbsp;
+<a href="/tagged/wishlist-%E2%88%9E-Raven-Darkholme" class="button">Raven</a>
+&nbsp;
+<a href="/tagged/wishlist-%E2%88%9E-Jemma-Simmons" class="button">Jemma</a>
+<p> 
+<h3>section three</h3>
+<p>
+<a href="/" class="button">one</a> 
+&nbsp;
+<a href="/" class="button">two</a>
+&nbsp;
+<a href="/" class="button">three</a>
+<br />
+<a href="/" class="button">four</a> 
+&nbsp;
+<a href="/" class="button">five</a>
+&nbsp;
+<a href="/" class="button">six</a>
+</center>
+
+</li>
+</ul>
+</li>
+
+    </div></div>
+</div>   
+ 
+<!-- END OF TABS -->
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="credit"> 
+<a href="https://houseofsol.tumblr.com" title="theme by houseofsol"><img src="https://68.media.tumblr.com/e5f4ca3f38bdf7a73c37efc9b8fd4996/tumblr_inline_oj2mweKepP1scj6vj_500.png"></a>
+</div>
+
+
+<!-- tabs/all in one script. do not delete -->
+ 
+<script>
+$(document).ready(function() {
+    $('.tabs .tab-links a').on('click', function(e)  {
+        var currentAttrValue = $(this).attr('href');
+ 
+        // Show/Hide Tabs
+        $('.tabs ' + currentAttrValue).fadeIn(600).siblings().hide();
+ 
+        // Change/remove current tab to active
+        $(this).parent('li').addClass('active').siblings().removeClass('active');
+ 
+        e.preventDefault();
+    });
+});
+</script>
+ 
+<script>
+$(document).ready(function() {
+  $('#filterOptions li a').click(function() {
+    // fetch the class of the clicked item
+    var ourClass = $(this).attr('class');
+ 
+    // reset the active class on all the buttons
+    $('#filterOptions li').removeClass('active');
+    // update the active state on our clicked button
+    $(this).parent().addClass('active');
+ 
+    if(ourClass == 'all') {
+      // show all our items
+      $('#ourHolder').children('div.item').show();
+    }
+    else {
+      // hide all elements that don't share ourClass
+      $('#ourHolder').children('div:not(.' + ourClass + ')').hide();
+      // show all elements that do share ourClass
+      $('#ourHolder').children('div.' + ourClass).show();
+    }
+    return false;
+  });
+});
+</script>
+
+<!-- end all in one script coding -->
+
+
+</body>
+
+
+<!-- verse popup 00 -->
+
+<div id="00" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:65px">description</li>
+		&nbsp;
+     <li style="width:65px">notes</li>
+     &nbsp;
+     <li style="width:65px">headcanons</li>
+     &nbsp;
+     <li style="width:65px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+</li>
+
+<li>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+</li>
+
+<li>
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+</li>
+
+<li>
+<p>
+<div class="shipimg">
+<center>
+<a title="connection one"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp; 
+<a title="connection two"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection three"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection four"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection five"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection six"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+</center>
+</div>
+</li>
+    
+</div>
+
+
+<!-- muse popup 00T Template -->
+
+
+<div id="00T" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:65px">biography</li>
+		&nbsp;
+     <li style="width:65px">abilities</li>
+     &nbsp;
+     <li style="width:65px">verses</li>
+     &nbsp;
+     <li style="width:65px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+<p>Character Biography lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<center><h3>TIME DIVIDER</h3></center>
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+<p>
+<br />
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.
+
+</li>
+
+<li>
+<center><h3>Abilities</h3></center>
+<p>Character Abilities lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<center><h3>Headcanons</h3></center>
+<p>Character Headcanons lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+</li>
+
+<li>
+<p>SHORT BLURBS ON CHARACTER HERE lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<center><h3>verse one</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/JjXeBO2.png"></div>
+<a href="/"><b>verse one</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+<p>
+<center><h3>verse two</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/JjXeBO2.png"></div>
+<a href="/"><b>verse two</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+<p>
+<center><h3>verse three</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/JjXeBO2.png"></div>
+<a href="/"><b>verse one</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+<p>
+<center><h3>verse four</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/JjXeBO2.png"></div>
+<a href="/"><b>verse two</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+</li>
+
+<li>
+<p>SHORT BLURBS ON SHIPPING HERE lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis. 
+<p>
+<div class="shipimg">
+<center>
+<a title="connection one"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp; 
+<a title="connection two"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection three"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection four"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection five"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection six"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+</center>
+</div>
+</li
+>
+    
+</div>
+
+<!-- muse popup 01 Natasha -->
+
+
+<div id="01" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:65px">biography</li>
+		&nbsp;
+     <li style="width:65px">abilities</li>
+     &nbsp;
+     <li style="width:65px">verses</li>
+     &nbsp;
+     <li style="width:65px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+<p>Russian born and orphaned, Natasha Romanoff was raised as a child assassin and ballerina by a covert Russian-based organization designated the Red Room. She later defected to the United States and joined SHIELD where she worked for the United States Government as a spy, and later an Avenger. Natasha contributed to the fall of Hydra, and consequently SHIELD, by releasing all of their confidential files onto the internet. 
+<p>Following the fall of SHIELD, Natasha Romanoff became a freelance agent, doing jobs that other people could or would not do, on a case by case basis. She is currently based out of a flat in New York, but travels across the globe as needed. 
+<p>
+<br />
+
+<center><h3>Full Biography Below</h3></center>
+
+<p>Natalia Alianovna Romanova was born in late 1928 in Stalingrad, Russia to Aksinya and Alian Romanov. The youngest of four children, she would unfortunately never have an opportunity to know her family. Soon after her birth, Ivan Petrovich rescued her from a building fire that claimed the lives of her family.
+<br />
+
+<p>She was raised by Ivan until she was claimed by her uncle, Taras Romanov, who pretended to be her father. In reality, Taras wanted Natalia to be among the first of his students; the first little girl he would turn into the perfect spy. Natalia later escaped from Tarasâ€™ clutches after he was killed by a man who had come to train at the Romanov academy, but not before she had attracted the attention of Russiaâ€™s Department X. After her uncleâ€™s death she was claimed by the department and put into the Black Widow Ops program along with other orphaned girls. In their Red Room facility she was trained in combat and espionage tactics as well as being used as a test subject for various experiments. 
+<br />
+
+<p>During her time in the Red Room, Natalia would make her first friend, and have her first brief experiences in love. With Sasha she learned that not everyone she would meet in life would be out to do her wrong, but their affair was frowned upon, and brief, and ended in tragedy.
+<br />
+
+<p>Her relationship with Nikolai began after, the two meeting when the Red Room joined the battlefield. They fell in love quickly, marrying in secret, fleeing from the Red Room even as they went together into battle. This relationship was not to last either, and some time later, Nikolai was claimed by the war, but not before leaving Natalia with something to remember him by.
+<br />
+
+<p>After Nikolaiâ€™s death, Natalia fled the battlefield making her way to the DobroÄskÃ½ Forest in Slovakia. Pregnant and alone, she was soon after taken in by a midwife, who sheltered Natalia until after the birth of her and Nikolaiâ€™s child. Not wanting to draw negative attention to the midwife and her family, Natalia set off again for Russia, hoping to find someplace safe to build herself a life.
+<br />
+
+<p>However, not long after her return to Russia she was recaptured by Department X and returned to the Red Room facility. Intended as an object lesson for the other Widow candidates who might want to follow in her footsteps, things would have been far worse for Natalia if not for the intervention of Ivan Petrovich once more. 
+<br />
+
+<p>She was slowly integrated back into the training at the Red Room, and it was here that Natalia first encountered the man known as the Winter Soldier. Natalia learned many things from the Soldier and soon their relationship progressed from more than just teacher and student. Knowing that such relations would be frowned upon, the two of them carried on their affair in secret, but all secrets are revealed eventually. After their relationship was discovered, both of them had all memory of each other erased. 
+<br />
+
+<p>It was after this that the Department ultimately decided to decommission and retire Natalia from service, setting her up as a member of the Bolshoi Ballet company. During her time as a ballerina, she went on to meet and wed renowned Soviet test pilot Alexi Shostakov. Alexi and Natasha had a few happy years together before she was informed of his unfortunate demise.
+<br />
+
+<p>After the death of her beloved husband, Natalia was drafted into the KGB, unknowingly recommended by Department X, and quickly became their best operative thanks to her time in the Red Room program. It was while she was with the KGB that she met, trained with, and became involved with the infamous Winter Soldier for a second time and earned the moniker Black Widow. It was also during this time that she is considered to have â€˜graduatedâ€™ from the Red Room program.
+<br />
+
+<p>Due to various programming/de-programming, not much of her life is known during the years she worked for the KGB. It is known that she was on a KGB mission assigned to protect a nuclear scientist when they were attacked by the Winter Soldier. He killed the man by firing a round through Natashaâ€™s stomach and into the man she had been assigned to protect leading to her disillusionment with the KGB.
+<br />
+
+<p>Shortly afterward, S.H.I.E.L.D. Director Nick Fury sent Agent Clint Barton to eliminate her. Agent Barton made a different call and recruited her to join S.H.I.E.L.D. instead, prompting Natasha to defect from Russia to the United States. After defecting from Russia she was given new documentation that obscured her true origins and more closely matched her apparent age as any previous records that may have provided information about her ancestry had either been lost or destroyed by the KGB.
+
+</li>
+
+<li>
+<center><h3>Abilities</h3></center>
+<p>Natasha is skilled in many languages, Russian, English, French, German, and Japanese among others. She is also a highly skilled combatant; being familiar with most weapons, and in various hand-to-hand combat techniques. Stealth, subterfuge and infiltration are some of her specialties. She often works without an extraction plan. 
+<p>She is an enhanced human being, having been given a version of the super-soldier serum used on Steve Rogers while employed by the Red Room. This allows her to heal faster and live longer than an average human being, though she has also been known to work through immense pain and damage to get the job done.    
+<p>
+<br />
+
+<center><h3>Headcanons</h3></center>
+<p>Natasha Headcanons lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+</li>
+
+<li>
+<p>Russian born and orphaned, Natasha Romanoff was raised as a child assassin and ballerina by a covert Russian-based organization designated the Red Room. She later defected to the United States and joined SHIELD where she worked for the United States Government as a spy, and later an Avenger. Natasha contributed to the fall of Hydra, and consequently SHIELD, by releasing all of their confidential files onto the internet. 
+<p>Following the fall of SHIELD, Natasha Romanoff became a freelance agent, doing jobs that other people could or would not do, on a case by case basis. She is currently based out of a flat in New York, but travels across the globe as needed. 
+<center><h3>Fixer</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/uSt95f8.png"></div>
+<a href="/"><b>Main Verse</b></a> &mdash; After the fall of SHIELD, Natasha was unsure who to trust, so she decides to strike out on her own. If you have a problem that needs solving, something that the police canâ€™t solve, and you need a little help, Natasha Romanoff can help. For a price.
+</div>
+<p>
+<center><h3>We Stay Together</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/YglDjvE.png"></div>
+<a href="/"><b>Alt MCU Verse</b></a> &mdash; This verse follows the canon backstory established in Earth - 199999 before diverging. In this verse, Natasha helped Steve escape, and break into the raft to free the rest of their team before they went on the run. They are vigilantes, helping people where they can, and running before anyone can try to stop them. Another day another safehouse.
+</div>
+<p>
+<center><h3>Returned</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/ATPDXyB.png"></div>
+<a href="/"><b>Alt MCU verse</b></a> &mdash; This verse follows the canon backstory established in Earth - 199999 before diverging. After sacrificing herself to obtain the soulstone for her family to save the world, Natasha found herself in the Soul Realm. After the defeat of Thanos, Steve Rogers returned the Soul Stone to Vormir. Upon the return of the stone to its keeper, Natasha was returned as well.
+<p>It is generally established that in this universe, Tony managed to survive using his Infinity Gauntlet, and Steve returned to the present instead of living in the past. Sam Wilson is still given the shield and mantle of Captain America.
+
+</div>
+<p>
+<center><h3>Across A Universe</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/zZzNvHU.png"></div>
+<a href="/"><b>Alt Main Verse</b></a> &mdash; This verse follows the canon backstory established in Earth - 199999 before diverging. In this verse, Natasha was forced to watch Clint sacrifice himself for the world. After the defeat of Thanos, and Tony's funeral, Steve returns the stones, but goes to live in the past. With the loss of her family, Natasha chooses to use the quantum technology to seek out a new universe.
+</div>
+<p>
+<center><h3>Argus Not SHIELD</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/zgzAyXO.png"></div>
+<a href="/"><b>Alt Verse</b></a> &mdash; Former ARGUS asset, Natasha now spends her days working for a P.I. and her nights doingâ€¦ far more interesting things. Sometimes a vigilante, sometimes a thief, sheâ€™ll do whatever she has to to get the job done. ( <a href="https://alteredcanon.tumblr.com/private/653763841886437376/tumblr_WibEwl6CcOyw16PMD">alternate biography</a> )
+</div>
+<p>
+<center><h3>Magic And Monsters</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/ca9aFjV.png"></div>
+<a href="/"><b>Alt Verse</b></a> &mdash; Who you gonna call? Romanoff. Whether itâ€™s ghosts, goblins, demons or vampires, if you have a problem that the police canâ€™t or wonâ€™t solve, Natasha Romanoff is the one to call. She specializes in investigating the supernatural and dispatching it where necessary. ( <a href="https://alteredcanon.tumblr.com/private/653763948205752320/tumblr_0TSOC1SCk9Plw8xHv">alternate biography</a> )
+
+</div>
+<p>
+<center><h3>Freelance</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/lNR3maO.png"></div>
+<a href="/"><b>Alt Verse</b></a> &mdash; After the fall of SHIELD, most world agencies shunned the former Agents of SHIELD, but Mycroft Holmes offered asylum. Natasha joined Mycroftâ€™s secret sector of the British government under a new alias, Victoria Winters.
+</div>
+<p>
+<center><h3>Bite Me</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/dtxIPcJ.png"></div>
+<a href="/"><b>Private Verse</b></a> &mdash; Kol was obviously trouble from the first time they met, but he seemed to be the good kind, even if he drove her crazy. When he wasnâ€™t being actively difficult, he was sort of charming, and somewhere along the way Natasha developed a fondness for him.
+<p>His brother Elijah, on the other hand, was almost always charming, if a bit aloof, and much easier to fall for. The problem was going to be in choosing which one of them to pursue; together they were perfect. Luckily for her, choosing doesnâ€™t seem to be necessary.
+<p>In Bite Me Kol and Elijah are both 1000 year old vampires and among the first of their kind. An Original, cursed into a vampiric existence by their mother long ago. Tony Stark is their nephew, the son of their brother Niklaus and Maria Stark. (a companion verse to Carolineâ€™s New York verse)
+</div>
+<p>
+<center><h3>Vampires, Witches, And Werewolves... Oh My!</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/oOa2saH.png"></div>
+<a href="/"><b>Private Verse</b></a> &mdash; Kol was obviously trouble from the first time they met, but he seemed to be the good kind, even if he drove her crazy. When he wasnâ€™t being actively difficult, he was sort of charming, and somewhere along the way Natasha developed a fondness for him.
+<p>His brother Elijah, on the other hand, was almost always charming, if a bit aloof, and much easier to fall for. The problem was going to be in choosing which one of them to pursue; together they were perfect. Luckily for her, choosing doesnâ€™t seem to be necessary.
+<p>In Vampires, Witches and Werewolves, Oh My! Kol was a vampire until his untimely death. Upon his resurrection, he has reverted back to what he was before his motherâ€™s curse: a very powerful witch. Also in this verse, Clint Barton is a vampire: a result of a disastrous mission that would have left him for dead, a tiny vial of vampire blood, and a very difficult choice. He only intended to come home to say goodbye, but as a witch of great power, Kol has promised to turn Clint Barton human again. Itâ€™s currently a work in progress. (a companion verse to Carolineâ€™s Vampires Anonymous verse)
+</div>
+<p>
+<center><h3>No Saints; Just Sinners</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/OUYnZrl.png"></div>
+<a href="/"><b>Selective Verse</b></a> &mdash; New Orleans is known for many things: the food, the music, Mardi Gras. What it isnâ€™t known for is vampires, but that doesnâ€™t mean they arenâ€™t there. The vampire population, and the fact that they control the city are just a few reasons why Natasha is baffled why Clint chose the city as his place for retirement. But then again, Natasha doesnâ€™t understand the need for roots or why they run deep for some people.
+<p>Or at least she didnâ€™t until she met Marcel Gerard. The vampire Marcel, self-proclaimed King of the Quarter, is easily among the most charming individuals sheâ€™s ever met.
+<p>Now Natasha herself is putting down roots in the middle of a supernatural war zone and buying a place for the first time in forever. Letâ€™s see how long it stays standing.
+</div>
+<p>
+<center><h3>Life Unexpected</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/rO8v6Ka.png"></div>
+<a href="/"><b>Alt Main Verse</b></a> &mdash; Natasha never expected to find the love of her life sitting on Clintâ€™s sofa. Charming, whip-smart, funny, Dominik was everything Natasha wanted; he was also one of Clintâ€™s former flings. That was a fact Natasha used as an excuse to keep her distance from Indiana Jones; she couldnâ€™t date one of Clintâ€™s exes after all.
+<p>After months of flirting, avoidance, countless conversations with Dominik and arguments with Clint, she and Dominik were paired together on a SHIELD mission to determine if a set of newly discovered Icelandic caves could be Asgardian in origin. When Clint engineered their cover to be that of newlyweds, he knew it would only be a matter of time before Natasha and Dominik were forced to confront their feelings. They lasted all of three hours after landing before they were making out in the hotel elevator.
+<p>Their fake engagement became all too real when they encountered Dominikâ€™s brother in the hotel bar, but secretly neither of them minded too much. And apparently a funny thing happens when you screw like rabbits in Asgardian cavesâ€¦ Natasha and Dominik are currently happily married and living in New York City, across the hall from Clint, with their daughter Anya.
+</div>
+<p>
+<center><h3>Motherhood</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/SXGnNy0.png"></div>
+<a href="/"><b>Alt Main Verse</b></a> &mdash; What was supposed to be a fun fling with the hot new guy Hercules quickly turned into something much more complicated when Natasha found herself pregnant with a child she never expected to have. She thought caring for a Hulk-sized wolf-dog was hard. That was nothing compared to explaining to her father Alian that she is planning to raise the child on her own (THAT IS NOT THE RUSSIAN WAY!), letting her baby daddy down easy (and keeping her hands off him afterward), dealing with her pesky new roommate Bruce (her sometimes-dog who doesnâ€™t seem to think she can take care of herself), explaining to her boss that she canâ€™t come to work today or tomorrow or really any day for the next twenty years or soâ€¦ Not to mention raising a child that is half Greek demi-god on her own with only the dog/nanny for help. And it would really help if everyone would stop trying to get her to date. ( <a href="https://notuptoyou.tumblr.com/post/136852706910/single-mom-natasha-verse-more-natasha-met">more info</a> )
+</div>
+<p>
+<center><h3>Both Have Sharp Teeth</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/I5jHH9S.png"></div>
+<a href="/"><b>Alt Verse</b></a> &mdash; Werewolf Verse - Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+<!-- <p>
+<center><h3>verse twelve</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/JjXeBO2.png"></div>
+<a href="/"><b>verse twelve</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div> -->
+</li>
+
+<li>
+<p>Natasha is a pansexual demiromantic with a preference for men, and an immense hatred for labels. Take her home, let her move in, don't call her your girlfriend. 
+<p>Natasha is currently <b>open</b> to a variety of romantic interests. 
+<p>I am also open to plotting better versions of any of the events I am excluding in my canon.
+<p>
+<div class="shipimg">
+<center>
+<a title="connection one"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp; 
+<a title="connection two"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection three"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection four"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection five"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection six"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+</center>
+</div>
+</li
+>
+    
+</div>
+
+<!-- muse popup 02 Wanda -->
+
+
+<div id="02" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:65px">biography</li>
+		&nbsp;
+     <li style="width:65px">abilities</li>
+     &nbsp;
+     <li style="width:65px">verses</li>
+     &nbsp;
+     <li style="width:65px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+<p>Wanda, along with her twin brother Pietro, was raised in a cozy apartment building in the capital city of Sokovia until a bombing caused the deaths of their parents when they were ten. Orphaned by violence, the twins were drawn to social activism, trying to help other Sokovians have better lives. This led to the twins being recruited by Hydra and experimented on, a process that ultimately unlocked their latent abilities. 
+<p>After the Maximoff twins and their abilities were manipulated by Hydra and later Ultron, they joined forces with the Avengers. Ultimately losing their country and their home, they were able to find a light in the darkness, and returned to the United States with the Avengers. While their place in the world is still in flux, Wanda tries to help when she can, and is exploring the extent of her abilities to better control them.  
+<p>
+<br />
+
+<center><h3>Full Biography Below</h3></center>
+
+<p>Wanda, along with her brother Pietro, were born on October 27 1995, and raised in a cozy little apartment building in one of the larger Sokovian cities by their parents Django and Marya Maximoff. Their apartment was considered small by American standards, but the twins were happy, usually healthy, and content with their lot in life; though it was never a lavish lifestyle.
+<br /> 
+
+<p>Despite the history of political unrest in the country of Sokovia, none of the Maximoffs were particularly affected by it. That is until one fateful evening when the twins were ten and a mortar shell collapsed their apartment building during a family dinner. Marya and Django were sucked through a hole in the floor and presumably crushed to death by the debris. Wanda might have died as well if not for the quick thinking of her twin brother Pietro, who grabbed her and pulled her with him under the bed. Not long after, a second shell hit the apartment where Wanda had been, but it did not go off. The twins were trapped under the bed for two days in their own filth staring at the unexploded shell with STARK INDUSTRIES written on the side. 
+<br />
+
+<p>After the death of their parents, Wanda and her brother Pietro were forced to live in a state run orphanage. Conditions here were not ideal. It was very crowded, and while it was rare for even some of the younger children to be adopted no one ever attempted to adopt the Maximoff twins. The twins were turned out of the orphanage on their sixteenth birthday due to overcrowding and lack of funds, and from that point on they had only each other to rely on. Wanda found what work she could, often working as a laundress or babysitter for the other people and families in the apartment building that she and Pietro called home. It was somewhat easier for Pietro to find work as a man, but life in Sokovia was no longer the idyllic life she had enjoyed as a child.
+<br /> 
+
+<p>In their spare time, Wanda and Pietro both found themselves getting involved in protests against Stark Industries and the Government of Sokovia for the treatment of its citizens. Many felt as though the country was making no effort to help the poorer classes and those that were affected by the now-constant conflict in the region. Foreign forces were constantly invading the streets of their city and the government was doing nothing to stop them as they ravaged Sokovia. After some of the protest leaders were arrested, Wanda took a greater role in activism helping to organize protests and boycotts and even helping some fugitives of the state. 
+<br />
+
+<p>It was during one of these protests that the activists were approached by men of SHIELD and offered an opportunity. By volunteering for the experiments of Dr. List, they would be given the power to do what the government could not and protect the Sokovian people. Initially skeptical, Wanda was convinced by her brother Pietro and Dr. List that this would be the most effective way to make Sokovia safe for the future. 
+<br />
+
+<p>Along with other volunteers from the town, Wanda and Pietro underwent a series of tests conducted by Doctor List where they were exposed to energy from the Scepter, which had fatal effects on all the other volunteers. Wanda and Pietro, however, experienced exceedingly different effects. <a title="While it does not explicitly say 'The power of the scepter unlocked their mutant abilities' that's how it's reading to me on the wiki and therefore is a plausible explanation for any comic verses/characters of how the twins got their powers and became mutants." class="">The power of the scepter unlocked latent supernatural powers within the pair</a>; while Pietro achieved superhuman speed, Wanda attained a number of mental powers such as telekinesis, hypnosis, and energy projection.
+
+</li>
+
+<li>
+<center><h3>Abilities</h3></center>
+<p>Wanda's abilities are limited only by Wanda herself. Her known abilities include neuro-electric interfacing, telekinesis, mental manipulation, and more, such as telepathy. Wanda's powers often work better when she is not actively trying to direct them, than when she is intentionally using them. 
+<p>Wanda is also capable of speaking Sokovian (Serbian) and English, and can generally mentally communicate with others in spite of language barriers. She is also capable of hand-to-hand combat, though she prefers to leave that to others more adept at it.      
+<p>
+<br />
+
+
+<center><h3>Headcanons</h3></center>
+<p>Wanda Headcanons lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+</li>
+
+<li>
+<p>Wanda, along with her twin brother Pietro, was raised in a cozy apartment building in the capital city of Sokovia until a bombing caused the deaths of their parents when they were ten. Orphaned by violence, the twins were drawn to social activism, trying to help other Sokovians have better lives. This led to the twins being recruited by Hydra and experimented on, a process that ultimately unlocked their latent abilities. 
+<p>After the Maximoff twins and their abilities were manipulated by Hydra and later Ultron, they joined forces with the Avengers. Ultimately losing their country and their home, they were able to find a light in the darkness, and returned to the United States with the Avengers. While their place in the world is still in flux, Wanda tries to help when she can, and is exploring the extent of her abilities to better control them.  
+<center><h3>Make Your Own Magic</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/pGbIz32.png"></div>
+<a href="/"><b>Main Verse</b></a> &mdash; Wanda is currently living in New York City, a place she loved before she ever set eyes on it. She may be living alongside her brother Pietro, or alone. Wanda is currently trying to find her place in the world since Sokovia is no longer in existence, and her goal of revenge on Tony Stark has been completed. Wanda may or may not be a part of the Avengers. 
+</div>
+<p>
+<center><h3>Blip In Time</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/TadljEc.png"></div>
+<a href="/"><b>Alt Main Verse</b></a> &mdash; Dissolved in Thanosâ€™s snap, Wanda finds herself in a completely different world than the one she knew. Her abilities still work, but will she ever get home? 
+</div>
+<p>
+<center><h3>Lost; Forgotten</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/i0ouKBF.png"></div>
+<a href="/"><b>Alt Main Verse</b></a> &mdash; Coming back from the blip, Wanda can only remember one thing. Her intense and all-consuming hatred for Thanos. He took everything from her, and now sheâ€™ll take everything from him.
+<p>Something goes wrong in the second snap. As Thanos dissolves, so does Wandaâ€™s sense of self, her memories. Luckily she retains a grip on her powers, but little else. The question becomes, who is Wanda Maximoff?
+</div>
+<p>
+<center><h3>Devoured By The Dark</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/ieGlvbu.png"></div>
+<a href="/"><b>Alt Verse</b></a> &mdash; Twisted by her grief after losing her brother, Wanda has become dangerously unbalanced and erratic. She is now sharp and cruel, almost heedless of the feelings of others. She has chosen to stay with the Avengers for now, mostly out of convenience (and where would she go?), but she is less a part of the team and more of a recluse, brooding in the dark. The only time she spends with them is on the battlefield where she can inflict horror upon others and feel a little less of the pain and guilt she carries with her every day.
+<p>She still has a bit of a moral compass in dark!Wanda, but sheâ€™s just very ragey. Like sheâ€™s still an Avenger, but mostly because that gives her someone to clean up her messes, and gives her an endless supply of targets.
+</div>
+<p>
+<center><h3>Corrupts Absolutely</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/qUPWBBH.png"></div>
+<a href="/"><b>Alt Verse</b></a> &mdash; Her powers have always been growing, but recently the chaos has started to overpower her. The magic has a cost. Disassociation, blackouts, her power has taken on, created a life of its own. Can Wanda rein in the chaos? Or will she be lost to it?
+</div>
+<p>
+<center><h3>The Red String</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/57BuYem.png"></div>
+<a href="/"><b>Alt Verse</b></a> &mdash; Most people wander into The Red String looking for a bit of magic to fix their lives; for Wanda Maximoff, The Red String is her life. She is the resident herbalist, offering natural medicine and quasi-magical alternatives to your everyday problems. She lives above the shop, and has a small greenhouse set up on the roof.
+</div>
+<p>
+<center><h3>College Life</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/5ZUGHOm.png"></div>
+<a href="/"><b>Alt Verse</b></a> &mdash; Wanda is determined to be the first girl in her family to graduate from college. She is even more determined to graduate with a degree and a good job so she can repay every penny her parents saved to get her here. She is currently pre-law, with a minor in psychology, and she waits tables at a local restaurant to cover the living expenses and boost her scholarship money.
+<p>Pietro attends the same college, on a track and field scholarship, and is usually more interested in girls than classes.
+</div>
+<p>
+<center><h3>Sanctuary</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/kg3hSax.png"></div>
+<a href="/"><b>Alt Verse</b></a> &mdash; Wanda helps to manage a bookshop for the magical and mundane. The front of the shop is dedicated to the humans who wish they were a little more magical, the back room is reserved for those who know they are. Thereâ€™s a small selection of food available, catering to certain dietary restrictions, as well as a wide array of magic tomes and spell components.
+<p>While the clientele are varied, The Sanctuary does not allow violence. There may or may not be a karaoke bar run by a demon in the basement.
+</div>
+<p>
+<center><h3>Sleeping Goddess</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/8fgAeMZ.png"></div>
+<a href="/"><b>Alt Verse</b></a> &mdash; Wanda Maximoff is the incarnation of Persephone, although she doesnâ€™t know it yet. She has always had an affinity for plants, preferred the warmth of the sun to the cold of winter and had a warm and caring personality.
+<p>Wanda migrated to the United States with her family when she was only eight years old, where they quickly settled into a good life in a small town. It was there that she had the opportunity to start her first garden, often winning prizes for the things that she grew there.
+<p>Currently Wanda is a student at university, studying to become a botanist, and spends most of her free time at the botanical gardens where she also works.
+<p>POWERS: She seems to be quite adept at growing things, even those that are outside of their normal climate.
+<p>Though the current reincarnation of Persephone, Wanda remains unaware of her past life as a goddess. She is unlikely to regain more of her powers or her memories until she is reunited with her Hades. <strike>Hades is TBA.</strike>
+</div>
+<p>
+<center><h3>Warlock</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/vWhUEdd.png"></div>
+<a href="/"><b>Alt Verse</b></a> &mdash;  Clearly a warlock, Wanda Elan, has striking red hair and eyes when she is not using a glamour.
+<p>Born to a single mother in a cursed mountain, Wanda and her brother are a very rare pair of Warlock twins. Where Wanda is crimson, her brother Pietro is silver. They were abandoned by their mother shortly after their birth, when Magda walked out into the wilderness in the dead of winter. The midwife promptly abandoned the twins on the doorstep of a church where they were taken in by the local healer.
+<p>Eventually their powers manifested, and they drew the attention of several High Warlocks in the area. The twins were then fostered by several High Warlocks in succession, though whether they learned anything or were just very fancy pets is a matter of debate. Recently they have made their way to New York, where they hope to stay.
+</div>
+</li>
+
+<li>
+<p>Wanda is a panromantic demisexual, who is quick to crush on people, but requires a significant bond to be involved sexually. 
+<p>Wanda is currently <b>open</b> to a variety of romantic interests, but these will most likely be more of a slow burn. 
+<p>I am also open to plotting better versions of any of the events I am excluding in my canon.
+<p>
+<div class="shipimg">
+<center>
+<a title="connection one"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp; 
+<a title="connection two"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection three"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection four"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection five"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection six"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+</center>
+</div>
+</li
+>
+    
+</div>
+
+<!-- muse popup 03 Caroline-->
+
+
+<div id="03" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:65px">biography</li>
+		&nbsp;
+     <li style="width:65px">abilities</li>
+     &nbsp;
+     <li style="width:65px">verses</li>
+     &nbsp;
+     <li style="width:65px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+<p>Caroline grew up as the resident mean girl of Mystic Falls Virginia, acting worse after her parents got divorced and she remained in the custody of her mother the Sheriff. Caroline was turned into a vampire out of spite shortly before her seventeenth birthday, but after initial problems, learned to embrace her new abilities. Caroline graduated from high school and left Virginia to go to college. 
+<p>Caroline thrived in college and the big city, quickly becoming a valued member of a high society event planning firm. Caroline is currently enjoying this phase of her life, and is trying to decide what she will do next, because she knows that she can't stay in one place for too long. There's still too much of the world to see, and so many things to do with her immortality.  
+<p>
+<br />
+
+<center><h3>Full Biography Below</h3></center>
+
+<p>Caroline Elizabeth Forbes was born on October 10th 1992 in Mystic Falls, Virginia to Elizabeth and William Forbes. Caroline had a fairly good childhood, seemingly oblivious to any problems with her parents marriage. Her mother was the town sheriff, which is likely why Caroline was closer with her father Bill. She grew up to be a typical spoiled popular girl, throwing herself even more into her extracurriculars after her parents divorce. Her father Bill moved out of state to be with his boyfriend Stephen, leaving Caroline and her mother Liz alone in Mystic Falls. 
+<br />
+
+<p>Her relationship with her mother continued to be rocky, but Caroline was an expert at pretending to be okay and excelled among her peers. Caroline became the captain of the cheerleading squad and won the town pageant to become Miss Mystic Falls. She also organized several events for the town and her high school, including several school dances. Caroline was very loyal to her friends, but she struggled with her own image of self worth, which made her easy to manipulate. 
+<br />
+
+<p>Caroline was Damon Salvatore's victim for several months, as he used his vampiric abilities to manipulate her on many occasions. She was eventually rescued from him by his brother Stefan and her friend/rival Elena Gilbert, who chose to let Caroline remain in the dark about vampires and other supernaturals in Mystic Falls. Caroline was later used as a pawn by Katherine Pierce, who murdered Caroline in the hospital as she was recovering from a car accident. Katherine wanted to go to war with the Salvatore brothers and used the blonde to deliver the message, knowing that Damon's blood in her system would cause her to become a vampire. 
+<br />
+
+<p>Caroline awoke as a vampire, but without knowing that there were other supernaturals in town that she could turn to for help. As she transitioned into a vampire, she became more aware of all the things that Damon had done to abuse her when she was simply human. She had a natural talent for mind compulsion, which was rare among vampires, but struggled with her blood lust and accidentally killed someone. When she tried to get help from Damon, he tried to kill her, but was once again stopped by Stefan and Elena. Stefan became her mentor as she learned to handle her new abilities, assisted by her friend Bonnie, who gave her a ring that allowed her to walk in the sunlight and therefore act more human. Caroline was still struggling to handle her enhanced emotions, but she learned to hunt woodland creatures for their blood instead of feeding on humans.
+<br />
+
+<p>As a friend of the Petrova Doppelganger Elena, even her death was filled with drama and turmoil, most of which was caused by the Mikaelson family of Original vampires. Every vampire in the modern world had been descended from one of the members of the Mikaelson family, and they were known for their ruthless and violent nature. Caroline narrowly avoided being sacrificed as part of a ritual which broke a curse placed upon Niklaus Mikaelson, and allowed him to access his true hybrid nature. However Caroline was still often used as bait and often tortured, surviving werewolf bites on at least two occasions. On one occasion, her father Bill once captured her and attempted to burn the vampire out of her, but she was rescued by her mother, Liz. She was convinced her father hated her, but they were able to repair their relationship before his untimely death.
+<br />
+
+<p>Because of her friends proclivity to use her as bait, Caroline had the unique position of being able to get to know Klaus Mikaelson better. Despite the rocky start, middle and near end of their relationship, they formed a unique bond in the year before Caroline's graduation from high school. However their romance was short-lived as Klaus moved on to New Orleans, and Caroline headed off to college, determined to remain as normal as possible for as long as possible before she had to give up her human life. Caroline graduated from college and began to see the world, starting with New York City.
+
+</li>
+
+<li>
+<center><h3>Abilities</h3></center>
+<p>Caroline is a vampire, and thus needs to consume blood (animal or human) to live. Caroline possesses super strength, super speed, super agility, super durability, super senses, and healing factor. Vampires also experience enhanced emotions, and have advanced emotional control. Vampires also have the ability to enter the minds of others to cause illusions, dream manipulation, and telepathy. Vampires also have the ability to influence and control the thoughts, emotions and behavior of humans, including the ability to supress memories. 
+<p>Vampires cannot go out in the sun without a specific magic item, and must be invited into a home by someone who lives there. They are also sensitive to Vervain which can weaken their powers and abilities. A vampire who is staked through the heart will die.    
+<p>
+<br />
+<center><h3>Headcanons</h3></center>
+<p>Caroline Headcanons lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+</li>
+
+<li>
+<p>Caroline grew up as the resident mean girl of Mystic Falls Virginia, acting worse after her parents got divorced and she remained in the custody of her mother the Sheriff. Caroline was turned into a vampire out of spite shortly before her seventeenth birthday, but after initial problems, learned to embrace her new abilities. Caroline graduated from high school and left Virginia to go to college. 
+<p>Caroline thrived in college and the big city, quickly becoming a valued member of a high society event planning firm. Caroline is currently enjoying this phase of her life, and is trying to decide what she will do next, because she knows that she can't stay in one place for too long. There's still too much of the world to see, and so many things to do with her immortality.  
+<center><h3>Vampires Anonymous</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/JuXbvhw.png"></div>
+<a href="/"><b>Main Verse</b></a> &mdash; Caroline and Klaus have moved to New York after the Chitauri incident so that Klaus can be closer to his son Tony Stark. Caroline and Klaus live in the Avengers tower with Tony and Clint and sometimes the rest of the Avengers and the Mikaelsons like one big happy family.
+
+<p>As part of a gift, Caroline gave Clint a vial of her blood to use in case of a mission gone horribly wrong so he could at least make it home to say goodbye. Clint never expected to use itâ€¦ until he did. Kol is a witch who has recently returned from the dead and promised to turn Clint human again.
+
+</div>
+<p>
+<center><h3>New York</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/foKz5c9.png"></div>
+<a href="/"><b>Alt Main Verse</b></a> &mdash; Caroline and Klaus have moved to New York after the Chitauri incident, and Carolineâ€™s high school graduation, so that Klaus can be closer to his son Tony Stark. Caroline had always been enamored with the city, and not even her SHIELD-assigned babysitter Clint Barton can bring her down.
+
+<p>Caroline and Klaus currently live in the Avengers tower with Tony and Clint and sometimes the rest of the Avengers and the Mikaelsons like one big happy family. Clint is fully human and Kol is still an Original.
+
+</div>
+<p>
+<center><h3>Littlest Holmes</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/UIeDx21.png"></div>
+<a href="/"><b>Alt Verse</b></a> &mdash; In this verse, Caroline is still the biological daughter of Bill and Liz Forbes, but she was adopted and raised by Mr. and Mrs. Holmes shortly after her birth. She very much thinks of Sherlock and Mycroft as her brothers, but after Mr. Holmes fell ill and Sherlock started to become difficult to manage she was sent to America to meet her birth parents and get to know them. This was around the time that Caroline was ten, and her birth parents tried to pretend to be a happy family for her sake for a while, but ultimately Bill moved out and left Caroline with Liz in Mystic Falls, Virginia. 
+
+<p>From there series events progressed fairly normally. Sherlock â€˜diedâ€™ shortly before Season One of The Vampire Diaries, and Caroline briefly returned to England for the funeral before going back to Virginia. She would not go back to England until after high school when her brother miraculously returned from the dead, albeit in a different way than Caroline had already done. 
+
+<p>She is currently living in London as a vampire, with Klaus, and reconnecting with her family.
+
+</div>
+<p>
+<center><h3>Sleeping Beauty</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/KYx3dQY.png"></div>
+<a href="/"><b>Private Verse</b></a> &mdash; This verse began as a role reversal of Sleeping Beauty in which Klausâ€™s enemies placed upon him a curse that would make him sleep forever unless he was kissed by his true love. His enemies hadnâ€™t counted on the fact that someone did in fact love him; a fact all of the other Mikaelsons were more than somewhat counting on. After awakening Klaus from magical slumber and still in intense denial that whatever she felt for him was any sort of love, Caroline fled New Orleans and returned to Mystic Falls. She would return to Klaus at Christmas time and the two would begin an official courtship.
+
+<p>In this verse Caroline was turned human by Esther, via a magical necklace that Esther gave her on her birthday months after Klaus and Caroline had been living together. It was said to be a peace offering, however, it was only after Caroline was human that Esther told the girl that the spirits said if she stayed with Klaus she would be his undoing.
+
+<p>Shortly afterward, Caroline left Klaus for New York, going into hiding, leaving him heartbroken. Unbeknownst to both of them she was also pregnant. When this fact was revealed to Klaus by someone other than Caroline, he wasted no time in tracking her down and dragging her home to New Orleans. Eventually Caroline revealed why she had left and the two reconciled. Some time after that, their twins Robb and Olivia were born. Kol in this verse is a witch, and Klausâ€™s son Tony and Clint visit often from New York.
+
+</div>
+<p>
+<center><h3>Wolf Mate</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/8F1g52s.png"></div>
+<a href="/"><b>Alt Verse</b></a> &mdash; Thereâ€™s a new Sheriff in town, well deputy, and despite the fact that he works with her mom, thereâ€™s just something about Dyson that Caroline canâ€™t resistâ€¦ at least not for too long. Her mom isnâ€™t exactly thrilled about their relationship, even more so when Dyson reveals his true nature, but if her little girl is happy, so is Liz.
+
+<p>But happiness canâ€™t last forever. The fae are coming to Mystic Falls, and no one knows what theyâ€™ll do when they arrive. The safest place for Caroline is anywhere but there, and so she goes to one place where she thinks she might be welcome: New Orleans. If only she knew that Dyson and Klaus had crossed paths before and it hadnâ€™t been pretty, perhaps she wouldâ€™ve chosen somewhere else to lay low.
+
+</div>
+</li>
+
+<li>
+<p>Caroline is panromantic and pansexual, and somehow prone to dating werewolf boys? <strike>We're not sure why either.</strike> 
+<p>Caroline is currently <b>open</b> to possible romantic adventures, but also has several verses in which she is romantically entangled. 
+<p>I am most likely to default to Caroline being in a committed relationship with <a Href="https://ialmostbelieveyou.tumblr.com/">Niklaus</a> unless otherwise discussed.  
+<p>
+<div class="shipimg">
+<center>
+<a title="connection one"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp; 
+<a title="connection two"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection three"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection four"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection five"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+<a title="connection six"><img src="https://i.imgur.com/JjXeBO2.png"></a>&nbsp;
+</center>
+</div>
+</li
+>
+    
+</div>
+
+<!-- muse popup 04 Hayley -->
+
+
+<div id="04" class="popup_block">
+<ul id="poptabs">
+     <li class="active" style="width:65px">biography</li>
+		&nbsp;
+     <li style="width:65px">abilities</li>
+     &nbsp;
+     <li style="width:65px">verses</li>
+     &nbsp;
+     <li style="width:65px">connections</li>
+</ul>  
+
+<ul id="poptab">
+<li class="active">
+<p>Hayley was adopted and raised in an upper class family where she existed to bring prestige to her family through her various accomplishments. Following a boating accident in her teens, Hayley shifted into a werewolf for the first time and subsequently ran away from home. She drifted for several years before finding her way to Mystic Falls, Virginia hunting down clues about her birth parents. 
+<p>Tricked into helping murder a dozen werewolf-vampire hybrids in Virginia, Hayley made her way to New Orleans Louisiana where she found her parents had died when she was a baby. Hayley currently works at the Silver Crescent and is trying to find more about her heritage, but leads are slim to none. With no hope of knowing her birth family, Hayley is currently trying to make a family of her own with friends.  
+<p>
+<br />
+
+<center><h3>Full Biography Below</h3></center>
+<p>Hayley Marshall, also known as Andrea Labonair, was born on June 6, 1991 in New Orleans, Louisiana to Troian Andre and Adina Delphine Labonair, the ruling family of the Crescent Wolf Clan. The Crescent Wolf clan was composed of several werewolf families, and at the time, controlled the French Quarter in New Orleans. There was some division amongst the pack, and Andrea was betrothed to Jackson Kenner, the heir of the Kenner family and other ruling family of the clan. Unfortunately this marriage was not to be, and the Labonairs were slaughtered by some of their fellow werewolves when Andrea was just a baby. Andrea was spared by her parents killer and her adoption was arranged by a local priest. The rest of the Crescent Wolf Clan was placed under a curse which forced them to remain in wolf form, except for under the light of the full moon when they would become human. 
+<br />
+
+<p>Andrea, now renamed to Hayley Penelope Rose Marshall, was adopted by a well-to-do family who had no idea that their new daughter was a werewolf, and as a result, neither was Hayley. She was raised in a high society atmosphere, where her achievements garnered her positive attention, and any shortcomings were quickly squashed. The area in which she excelled the most was that of art, becoming a skilled painter with a particular emphasis on impressionist techniques. Despite her artistic talents, and privileged upbringing, Hayley never quite lived up to her adoptive parents expectations, and some time after her seventh birthday, they had a child of their own, via surrogate, named Isabelle. â€˜Bellaâ€™ was the perfect daughter, and Hayley was quickly overshadowed by her younger sister. As a result, her innate wild streak became more pronounced, leading Hayley down a rebellious path to the events that would trigger her werewolf transformation. 
+<br />
+
+<p>When Hayley was thirteen she and some friends were involved in what the police would write off as a boating accident. The result of this â€˜accidentâ€™ caused Hayley to shift on the next full moon tearing apart her parents living room. She ran away from home after her parents discovered her among the wreckage rather than face military or boarding school. She drifted after that, occasionally joining other wolf packs, sometimes con artists, eventually meeting Tyler and helping him break his hybrid sire bond from Klaus in the Appalachian Mountains. 
+<br />
+
+<p>She later followed him to Mystic Falls, Virginia, to help the other hybrids break their sire bonds as well. Unfortunately, Hayley did not help the others out of the goodness of her heart, but as part of a deal with Professor Atticus Shane to get information about her birth parents. Shane needed to sacrifice twelve hybrids as part of a plot to raise his wife from the dead. After Hayley had helped twelve hybrids, other than her friend Tyler, break their sire bond with Klaus, Shane informed her that her parents were dead, and gave her a flash drive with all the information he had on them, which was very little. Tyler tried to save his friends from Klaus by concocting a plan to use his body as a trap for Klaus's soul, but Hayley informed Klaus of Tyler's plan. Hayley then warned Tyler that Klaus was on the warpath, and ran. Klaus killed the twelve hybrids as Hayley fled to New Orleans to find her family. 
+<br />
+
+</li>
+
+<li>
+<center><h3>Abilities</h3></center>
+<p>Hayley is a werewolf, and as such she possesses enhanced strength, speed, agility, and healing factor. Werewolves are also more durable than an average human, and have superhuman senses. Hayley's abilities are stronger at night, or if she is transformed into a wolf. Werewolves can occasionally use an adrenaline rush to increase their abilities, with the side effect of them having glowing wolfish eyes. 
+<p>Werewolves are forced to transform into a wolf on the night of the full moon. The only exception is during pregnancy, as female werewolves are not forced to shift during the full moon for the duration of the pregnancy. 
+<p>A werewolf bite can potentially kill a vampire. Werewolves are sensitive to Wolfsbane, which weakens them, but are not allergic to silver. 
+<p>
+<br />
+
+
+<center><h3>Headcanons</h3></center>
+<p>Hayley Headcanons lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+
+<p>lorem ipsum dolor sit amet, consectetuer adipiscing elit. aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. aliquam mattis porta urna. maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. aenean id massa ut lacus molestie porta. curabitur sit amet quam id libero suscipit venenatis.     
+<p>
+<br />
+
+</li>
+
+<li>
+<p>Hayley was adopted and raised in an upper class family where she existed to bring prestige to her family through her various accomplishments. Following a boating accident in her teens, Hayley shifted into a werewolf for the first time and subsequently ran away from home. She drifted for several years before finding her way to Mystic Falls, Virginia hunting down clues about her birth parents. 
+<p>Tricked into helping murder a dozen werewolf-vampire hybrids in Virginia, Hayley made her way to New Orleans Louisiana where she found her parents had died when she was a baby. Hayley currently works at the Silver Crescent and is trying to find more about her heritage, but leads are slim to none. With no hope of knowing her birth family, Hayley is currently trying to make a family of her own with friends.  
+<center><h3>Moonbound</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/gjGV25U.png"></div>
+<a href="/"><b>MAIN VERSE</b></a> &mdash; Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam nisi lorem, pulvinar id, commodo feugiat, vehicula et, mauris. Aliquam mattis porta urna. Maecenas dui neque, rhoncus sed, vehicula vitae, auctor at, nisi. Aenean id massa ut lacus molestie porta. Curabitur sit amet quam id libero suscipit venenatis. 
+<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse sed ligula. Sed volutpat odio non turpis gravida luctus. Praesent elit pede, iaculis facilisis, vehicula mattis, tempus non, arcu.
+</div>
+<p>
+<center><h3>Team Up To Take Down</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/X6G2P4j.png"></div>
+<a href="/"><b>Alt Main Verse</b></a> &mdash; Already at odds with the Mikaelson family as a result of helping Klausâ€™s hybrids break their sire bond, and betrayed by Katherine Pierce, Hayley finds an unlikely ally in Marcel Gerard. With Marcel she begins to try and bring peace to the French Quarter, unknowingly picking up where her dead parents left off. 
+</div>
+<p>
+<center><h3>Family By Blood</h3></center>
+<p>
+<div id="verse">
+<div id="left"><img src="https://i.imgur.com/ufH3cQx.png"></div>
+<a href="/"><b>Alt Main Verse</b></a> &mdash; Hayley was sired by Klaus when he turned the pack she was running with while he was on his mission to build himself an army of hybrids. She managed to escape Klausâ€™s influence in the aftermath of his confrontation with Mikael. She was presumed dead until her reappearance at the Lockwood Mansion after breaking and helping Tyler to break his sire bond.
+<p>Hayley claimed that her sire bond had been suppressed by a witch who owed her a favor, and Klaus kept her alive because she was one of so few remaining hybrids. When she turned on the other hybrids and fled to New Orleans, Klaus discovered that Hayley had done more than suppress her sire bond, she had broken it entirely.
+<p>Still, Klaus helped her when she called, and protected her as if she was family as in a way she was, turned from his blood. As such an enterprising and intelligent hybrid, Klaus has kept a close eye on her ever since that night. As the last remaining hybrid in existence, other than Klaus, she has a longer leash than most, but is still vulnerable to Klausâ€™s temper on occasion.
+<p>Now that they are all in New Orleans, theyâ€™re all in this together; more or less.
+</div>
+<p>
+<center><h3>Lonely Wolves</h3></center>
+<p>
+<div id="verse">
+<div id="right"><img src="https://i.imgur.com/CDn8Yb9.png"></div>
+<a href="/"><b>Private Verse</b></a> &mdash; After being rescued from Katherineâ€™s assassin, <a href="https://ialmostbelieveyou.tumblr.com/">Klaus</a> and Hayley start to bond. Klaus invites her to live with him so he can protect her, and soon they return to the plantation house in New Orleans. Over time they develop an unlikely friendship, and from there develop into something more than friends.
+<p>One accidental pregnancy and some serious issues later, Hayley and Klaus are living together, occasionally with his family, and trying to develop a relationship for the sake of their daughter, Charlotte.
+<p>When not exiled to the plantation house, Hayley can often be found with her friend <a href="https://callitcou
